@@ -1,10 +1,12 @@
 import '../App.css';
+import Fridge from "./Fridge";
 
 function App() {
   
   return (
     <div className="App">
-      <h1>Hellow World</h1>
+      {/* Routes will go here in the future */}
+      <Fridge />
     </div>
   );
 }
