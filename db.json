@@ -1,0 +1,25 @@
+{
+  "user": [{
+    "userInfo" : {
+      "first_name" : "Bob",
+      "last_name" : "Burger"
+    }
+  },
+  {
+    "fridge" : [
+      {
+        "id" : 1,
+        "item_name" : "banana",
+        "type" : "fruit",
+        "quantity" : 4
+      },
+      {
+        "id" : 2,
+        "item_name" : "broccoli",
+        "type" : "vegetable",
+        "quantity" : 5
+      }
+    ]
+  }  
+]
+}
