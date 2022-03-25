@@ -1,25 +1,50 @@
 {
-  "user": [{
-    "userInfo" : {
-      "first_name" : "Bob",
-      "last_name" : "Burger"
-    }
+  "user_info": {
+    "first_name": "Bob",
+    "last_name": "Vance"
   },
-  {
-    "fridge" : [
-      {
-        "id" : 1,
-        "item_name" : "banana",
-        "type" : "fruit",
-        "quantity" : 4
-      },
-      {
-        "id" : 2,
-        "item_name" : "broccoli",
-        "type" : "vegetable",
-        "quantity" : 5
-      }
-    ]
-  }  
-]
+  "fridge": [
+    {
+      "id": 1,
+      "item_name": "bananas",
+      "quantity": 5,
+      "type": "fruit"
+    },
+    {
+      "item_name": "Broccoli",
+      "type": "Vegetable",
+      "quantity": "1",
+      "id": 2
+    },
+    {
+      "item_name": "Gnocchi",
+      "type": "Poultry",
+      "quantity": "9",
+      "id": 3
+    },
+    {
+      "item_name": "Pasta",
+      "type": "Poultry",
+      "quantity": "3",
+      "id": 4
+    },
+    {
+      "item_name": "Bababa",
+      "type": "Vegetable",
+      "quantity": "4",
+      "id": 5
+    },
+    {
+      "item_name": "Pasta",
+      "type": "Meat",
+      "quantity": "12",
+      "id": 6
+    },
+    {
+      "item_name": "eggs",
+      "type": "Vegetable",
+      "quantity": "4",
+      "id": 7
+    }
+  ]
 }
