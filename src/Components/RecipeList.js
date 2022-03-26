@@ -47,9 +47,9 @@ const RecipeList = ({recRecipe}) => {
     }
     
     const eachRecipe = (recipe) => {
-        const {title, image} = recipe
+        const {title, image, id} = recipe
         return (
-        <Grid item xs={4} >
+        <Grid item xs={4} key={id}>
             <Card xs={{ height: '100%', display: 'flex', flexDirection: 'column', maxWidth: 350 }}>
                 <CardHeader
                     avatar={

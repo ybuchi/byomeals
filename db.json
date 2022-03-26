@@ -21,6 +21,12 @@
         "item_name" : "chicken",
         "type" : "poultry",
         "quantity" : 2
+    }, 
+      {
+        "id" : 4,
+        "item_name" : "steak",
+        "type" : "poultry",
+        "quantity" : 1
     }
   ]
 } 
