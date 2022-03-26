@@ -1,10 +1,12 @@
-import '../App.css';
+
+import Recommended from './Recommended';
 
 function App() {
   
   return (
     <div className="App">
-      <h1>Hellow World</h1>
+      
+      <Recommended />
     </div>
   );
 }

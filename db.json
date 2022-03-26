@@ -1,12 +1,9 @@
 {
-  "user": [{
-    "userInfo" : {
+  "userInfo" : {
       "first_name" : "Bob",
       "last_name" : "Burger"
-    }
-  },
-  {
-    "fridge" : [
+    },
+  "fridge" : [
       {
         "id" : 1,
         "item_name" : "banana",
@@ -18,8 +15,12 @@
         "item_name" : "broccoli",
         "type" : "vegetable",
         "quantity" : 5
-      }
-    ]
-  }  
-]
-}
+      },
+      {
+        "id" : 3,
+        "item_name" : "chicken",
+        "type" : "poultry",
+        "quantity" : 2
+    }
+  ]
+} 
