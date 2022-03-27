@@ -9,6 +9,7 @@ function FoodCard({foodItem}) {
         .then(res=> res.json())
         .then(itemAPIData => setFoodItemImage(itemAPIData.hints[0].food.image))
     },[])
+    
     return(
         <>
             <h2>{foodItem.item_name}</h2>

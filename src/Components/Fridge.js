@@ -42,7 +42,8 @@ function Fridge(){
         fetch('http://localhost:3004/fridge')
         .then(res => res.json())
         .then(fridgeData => setFridgeData(fridgeData));
-
+        
+        //Example FETCH CALL WITH EDAMAM
         fetch('https://api.edamam.com/api/food-database/v2/parser?app_id=52ce18e1&app_key=94901fd21fbdbc510e92bd7736f43784&ingr=banana&nutrition-type=cooking')
         .then(res => res.json())
         .then(data => console.log(data));
