@@ -1,9 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import Grid from '@mui/material/Grid';
-
-
+import "./FoodCard.css";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
+import IconButton from '@mui/material/IconButton';
 
 function FoodCard({foodItem}) {
 
@@ -15,12 +17,22 @@ function FoodCard({foodItem}) {
     // },[foodItem.item_name])
 
     return(
-            <Grid item xs={3}>
-                <Card>
-                    <CardHeader><h2>{foodItem.item_name}</h2></CardHeader>
+            <Grid item xs={12} sm={6} md={3} lg={2}>
+                <Card style={{backgroundColor : "#E8FFC2", color: "black"}}>
+                    <CardHeader className="card-header" title={foodItem.item_name}/>
+                    
                     <img className="card-image" src={foodItem.image} alt={foodItem.item_name}/>
-                    <h4>Type: {foodItem.type}</h4>
-                    <p>Quantity: {foodItem.quantity}</p>
+                    
+                    <h4>{foodItem.type}</h4>
+                    <IconButton aria-label="remove">
+                        <RemoveCircleIcon/>
+                    </IconButton>
+                    <span>Quantity: {foodItem.quantity}</span>
+                    <IconButton aria-label="add">
+                        <AddCircleIcon/>
+                    </IconButton>
+                    
+                    
                 </Card>
             </Grid>
     )

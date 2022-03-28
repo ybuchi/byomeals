@@ -22,6 +22,7 @@ function Fridge(){
 
 
     function addNewItem(newItem){
+        //TO DO: Make a fetch request to edamam API and use newItem item name to populate query.
 
         const configObject = {
             method: "POST",
@@ -39,7 +40,7 @@ function Fridge(){
     }
 
     useEffect(()=>{
-        
+
         //We're setting the fridgeData state to contain all items currently in the user's fridge in JSON DB
         fetch('http://localhost:3004/fridge')
         .then(res => res.json())
