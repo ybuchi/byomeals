@@ -27,3 +27,10 @@
     font-family: 'Caveat Brush', cursive;
     font-size: 60px;
 }
+#btn-add-item{
+    color: white;
+    font-family: "Caveat Brush", cursive; 
+}
+.form-input{
+    width: 100%;
+}
