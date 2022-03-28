@@ -45,6 +45,34 @@
       "quantity": "1",
       "image": "https://www.edamam.com/food-img/f70/f70890fe73fc9e333aa584a88a61e351.jpg",
       "id": 9
+    },
+    {
+      "item_name": "Soy sauce",
+      "type": "Fats and Oils",
+      "quantity": "1",
+      "image": "",
+      "id": 10
+    },
+    {
+      "item_name": "Soy",
+      "type": "Vegetable",
+      "quantity": "1",
+      "image": "https://www.edamam.com/food-img/f56/f562e461eb0618f367f538b836c17b82.jpg",
+      "id": 11
+    },
+    {
+      "item_name": "flour",
+      "type": "Grains, Nuts and Baking",
+      "quantity": 0,
+      "image": "",
+      "id": 12
+    },
+    {
+      "item_name": "arborio rice",
+      "type": "Grains, Nuts and Baking",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/b4c/b4c739e76a6f2172b7ad49d0aa41d5aa.jpg",
+      "id": 13
     }
   ]
 }

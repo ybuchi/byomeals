@@ -26,6 +26,7 @@ function FoodCard({foodItem}) {
                     <IconButton aria-label="add">
                         <AddCircleIcon/>
                     </IconButton>
+                    {/* //This is a placeholder style. We want to make it so that when an item is of x category, it turns y color. */}
                     <h4 style={{backgroundColor : "#E8FFC2", color : "black"}}>{foodItem.type}</h4>
                     
                 </Card>
