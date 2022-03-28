@@ -27,7 +27,7 @@ function FoodCard({foodItem}) {
                     <IconButton aria-label="remove">
                         <RemoveCircleIcon/>
                     </IconButton>
-                    <span>Quantity: {foodItem.quantity}</span>
+                    <span>{foodItem.quantity}</span>
                     <IconButton aria-label="add">
                         <AddCircleIcon/>
                     </IconButton>

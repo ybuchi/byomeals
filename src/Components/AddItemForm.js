@@ -17,7 +17,7 @@ function AddItemForm({newItemForm, newItemFormState, addNewItem}) {
     }
     return (
         <div className="form-container font-ptsans-bold">
-            <h2 className="font-caveat label">Add Ingredients</h2>
+            <h2 className="font-caveat label">Add New Ingredients</h2>
             <form onSubmit={handleNewItemSubmit}>
                 <Grid container direction="row" justify="flex-start" alignItems="flex-start" spacing={1}>
                     <Grid container spacing={1}>

@@ -9,36 +9,42 @@
       "item_name": "bananas",
       "quantity": 5,
       "type": "fruit",
-      "image" : "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg"
-
+      "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg"
     },
     {
       "item_name": "Broccoli",
       "type": "Vegetable",
       "quantity": "1",
-      "id": 2, 
-      "image" : "https://www.edamam.com/food-img/3e4/3e47317a3dd54dc911b9c44122285df1.jpg"
+      "id": 2,
+      "image": "https://www.edamam.com/food-img/3e4/3e47317a3dd54dc911b9c44122285df1.jpg"
     },
     {
       "item_name": "Gnocchi",
       "type": "Poultry",
       "quantity": "9",
       "id": 3,
-      "image" : "https://www.edamam.com/food-img/8ae/8aeb40c14bcd25ffd5cfc68efd41de0a.jpg"
+      "image": "https://www.edamam.com/food-img/8ae/8aeb40c14bcd25ffd5cfc68efd41de0a.jpg"
     },
     {
       "item_name": "Pasta",
       "type": "Poultry",
       "quantity": "3",
       "id": 4,
-      "image" : "https://www.edamam.com/food-img/296/296ff2b02ef3822928c3c923e22c7d19.jpg"
+      "image": "https://www.edamam.com/food-img/296/296ff2b02ef3822928c3c923e22c7d19.jpg"
     },
     {
       "item_name": "eggs",
       "type": "Vegetable",
       "quantity": "4",
       "id": 7,
-      "image" : "https://www.edamam.com/food-img/a7e/a7ec7c337cb47c6550b3b118e357f077.jpg"
+      "image": "https://www.edamam.com/food-img/a7e/a7ec7c337cb47c6550b3b118e357f077.jpg"
+    },
+    {
+      "item_name": "Filet Mignon",
+      "type": "Vegetable",
+      "quantity": "1",
+      "image": "https://www.edamam.com/food-img/f70/f70890fe73fc9e333aa584a88a61e351.jpg",
+      "id": 9
     }
   ]
 }

@@ -17,13 +17,14 @@ function Fridge(){
     const [newItemForm, newItemFormState] = useState({
         item_name : "",
         type : "Vegetable",
-        quantity : 0
+        quantity : 0,
+        image : ""
     })
 
 
     function addNewItem(newItem){
-        //TO DO: Make a fetch request to edamam API and use newItem item name to populate query.
 
+        //TO DO: Make a fetch request to edamam API and use newItem item name to populate query.
         const configObject = {
             method: "POST",
             headers : {
@@ -32,10 +33,19 @@ function Fridge(){
             },
             body: JSON.stringify(newItem)
         }
+        
+        fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=52ce18e1&app_key=94901fd21fbdbc510e92bd7736f43784&ingr=${newItem.item_name.toLowerCase().trim()}&nutrition-type=cooking`)
+        .then(res=> res.json())
+        .then(itemAPIData => newItemFormState({...newItemForm, image : itemAPIData.hints[0].food.image}))
+        .then(()=>{
+            fetch('http://localhost:3004/fridge', configObject)
+            .then(res => res.json())
+            .then(newFoodItem => setFridgeData([...fridgeData, newFoodItem]))
+        });
 
-        fetch('http://localhost:3004/fridge', configObject)
-        .then(res => res.json())
-        .then(newFoodItem => setFridgeData([...fridgeData, newFoodItem]))
+        
+
+        
 
     }
 
