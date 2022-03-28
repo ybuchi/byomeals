@@ -1,16 +1,8 @@
 import React from "react";
-import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
-import InputLabel from '@mui/material/InputLabel';
-import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-
-
-
-
-
 import "./AddItemForm.css"
 
 function AddItemForm({newItemForm, newItemFormState, addNewItem}) {
