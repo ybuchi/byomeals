@@ -1,0 +1,18 @@
+.font-caveat {
+    font-family: 'Caveat', cursive;
+}
+.font-ptsans-bold {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+}
+.label{
+    margin-bottom: 20px;
+}
+.form-container {
+    color: white;
+    background-color: #4D77FF;
+    padding: 20px 30px;
+}
+.control-box {
+    border: black 2px solid;
+}

@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import "./AddItemForm.css"
 
 function AddItemForm({newItemForm, newItemFormState, addNewItem}) {
 
@@ -16,22 +17,22 @@ function AddItemForm({newItemForm, newItemFormState, addNewItem}) {
         addNewItem(newItemForm)
     }
     return (
-        <>
-            <h2>Add Items to Your Fridge</h2>
+        <div className="form-container font-ptsans-bold">
+            <h2 className="font-caveat label">Add Items to Your Fridge</h2>
             <Form onSubmit={handleNewItemSubmit}>
                 <Row>
                     <Col>
                         {/* Item Name */}
                         <Form.Group as={Row} className="mb-3">
                             <Form.Label htmlFor="item-name">Item Name: </Form.Label>
-                            <Form.Control onChange={handleOnChange} type="text" name="item_name" id="item_name" value={newItemForm.item_name}></Form.Control> <br/>
+                            <Form.Control className="control-box" onChange={handleOnChange} type="text" name="item_name" id="item_name" value={newItemForm.item_name}></Form.Control> <br/>
                         </Form.Group>
                     </Col>
                     <Col>
                         {/* Item Quantity */}
                         <Form.Group className="mb-3">
                             <Form.Label htmlFor="item-quantity">Quantity: </Form.Label>
-                            <Form.Control onChange={handleOnChange} type="number" name="quantity" id="item-quantity" value={newItemForm.quantity}></Form.Control> <br/>
+                            <Form.Control className="control-box" onChange={handleOnChange} type="number" name="quantity" id="item-quantity" value={newItemForm.quantity}></Form.Control> <br/>
                         </Form.Group>
                     </Col>
                     <Col>
@@ -48,11 +49,12 @@ function AddItemForm({newItemForm, newItemFormState, addNewItem}) {
                 </Row>
                 <Row>
                     <Col>
-                        <Button type="submit" value="Add Item">Add Item</Button>
+                        <Button className="font-ptsans-bold" type="submit" value="Add Item" style={{backgroundColor : "#56BBF1"}}>Add Item</Button>
                     </Col>
                 </Row>
             </Form>
-        </>
+        </div>
+
     )
 }
 
