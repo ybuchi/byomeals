@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Col from 'react-bootstrap/Col';
+import ListGroup from 'react-bootstrap/ListGroup'
 
 
 function FoodCard({foodItem}) {
@@ -23,10 +24,10 @@ function FoodCard({foodItem}) {
 
                         <Card.Title><h2>{foodItem.item_name}</h2></Card.Title>
                         <Card.Img  className="card-image" src={foodItemImage} alt={foodItem.item_name}/>
-                        <Card.Text>
+                        <ListGroup.Item>
                             <h4>Type: {foodItem.type}</h4>
                             <p>Quantity: {foodItem.quantity}</p>
-                        </Card.Text>
+                        </ListGroup.Item>
                         
                     </Card.Body>
                 </Card>

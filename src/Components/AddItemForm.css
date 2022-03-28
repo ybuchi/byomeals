@@ -9,7 +9,9 @@
     margin-bottom: 20px;
 }
 .card-image {
-    border-width: 100%;
+    border-radius: 100%;
+    border: solid black 2px;
+    width: 100px;
 }
 .form-container {
     color: white;
