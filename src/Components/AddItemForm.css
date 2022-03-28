@@ -6,7 +6,8 @@
     font-weight: bold;
 }
 .label{
-    margin-bottom: 20px;
+    margin: 0px 20px 20px 20px;
+    font-size: 50px;
 }
 .card-image {
     border-radius: 100%;
