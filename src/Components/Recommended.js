@@ -16,7 +16,8 @@ const Recommended = () => {
     // to grab recipes data API beginning
     const [recRecipes, setRecRecipes] = useState([])
     const data = async () => {
-        const req = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=b0e9cd47e90747dc899daf160fb585ef&ingredients=${selectOption.item_name}&number=10`)
+        // const req = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=b0e9cd47e90747dc899daf160fb585ef&ingredients=${selectOption.item_name}&number=10`)
+        const req = await fetch('http://localhost:5001/recipes')
         const res = await req.json()
         return res
     }
