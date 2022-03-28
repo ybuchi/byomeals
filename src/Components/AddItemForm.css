@@ -8,6 +8,9 @@
 .label{
     margin-bottom: 20px;
 }
+.card-image {
+    border-width: 100%;
+}
 .form-container {
     color: white;
     background-color: #4D77FF;
@@ -15,4 +18,9 @@
 }
 .control-box {
     border: black 2px solid;
+}
+.main-title{
+    margin: 40px 30px;
+    font-family: 'Caveat Brush', cursive;
+    font-size: 60px;
 }
