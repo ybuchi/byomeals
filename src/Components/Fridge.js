@@ -33,7 +33,7 @@ function Fridge(){
             },
             body: JSON.stringify(newItem)
         }
-        
+
         fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=52ce18e1&app_key=94901fd21fbdbc510e92bd7736f43784&ingr=${newItem.item_name.toLowerCase().trim()}&nutrition-type=cooking`)
         .then(res=> res.json())
         .then(itemAPIData => newItemFormState({...newItemForm, image : itemAPIData.hints[0].food.image}))
@@ -42,11 +42,6 @@ function Fridge(){
             .then(res => res.json())
             .then(newFoodItem => setFridgeData([...fridgeData, newFoodItem]))
         });
-
-        
-
-        
-
     }
 
     useEffect(()=>{
@@ -61,14 +56,28 @@ function Fridge(){
         // .then(res => res.json())
         // .then(data => console.log(data));
     },[])
-    //NESTED COMPONENTS
-    //1. A form where the user can input their individual fridge items
-    //2. Cards for individual components that will display each item (use API to fetch images)
-    //3. Ability to add quantity (update) or delete items (delete)
+
+    function incrementQuantity(foodItemToIncrement){
+
+        const configObj ={
+            method: "PATCH",
+            headers: {
+                'Content-Type': "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(foodItemToIncrement)
+        }
+
+        fetch(`http://localhost:3004/fridge/${foodItemToIncrement.id}`, configObj)
+        .then(res => res.json())
+        .then(updatedFoodItem => setFridgeData([...fridgeData, updatedFoodItem]));
+    }
+
+
     return(
         <>
             <AddItemForm newItemForm={newItemForm} newItemFormState={newItemFormState} addNewItem={addNewItem}/>
-            <FoodContainer fridgeData={fridgeData} setFridgeData={setFridgeData}/>
+            <FoodContainer fridgeData={fridgeData} incrementQuantity={incrementQuantity} />
             
         </>
     )

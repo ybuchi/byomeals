@@ -7,11 +7,16 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import IconButton from '@mui/material/IconButton';
 
-function FoodCard({foodItem}) {
+function FoodCard({foodItem, setFridgeData, incrementQuantity, decrementQuantity}) {
 
-    // //Currently only using this useEffect to get the pictures of the food items
-    
-
+    function handleClickIncrement(e){
+        const updatedFoodItem = {...foodItem, quantity : ++foodItem.quantity}
+         incrementQuantity(updatedFoodItem)
+    }
+    function handleClickDecrement(e) {
+        const updatedFoodItem = {...foodItem, quantity : --foodItem.quantity}
+        incrementQuantity(updatedFoodItem)
+    }
     return(
             <Grid item xs={12} sm={6} md={3} lg={2}>
                 <Card className="food-card" >
@@ -19,11 +24,11 @@ function FoodCard({foodItem}) {
                     
                     <img className="card-image" src={foodItem.image} alt={foodItem.item_name}/><br/>
     
-                    <IconButton aria-label="remove">
+                    <IconButton aria-label="remove" onClick={handleClickDecrement}>
                         <RemoveCircleIcon/>
                     </IconButton>
                     <span>{foodItem.quantity}</span>
-                    <IconButton aria-label="add">
+                    <IconButton aria-label="add" onClick={handleClickIncrement}>
                         <AddCircleIcon/>
                     </IconButton>
                     {/* //This is a placeholder style. We want to make it so that when an item is of x category, it turns y color. */}
