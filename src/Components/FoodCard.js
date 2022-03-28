@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from "react";
-import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
-import Col from 'react-bootstrap/Col';
-import ListGroup from 'react-bootstrap/ListGroup'
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
 
 
 function FoodCard({foodItem}) {
@@ -16,22 +14,16 @@ function FoodCard({foodItem}) {
     },[foodItem.item_name])
 
     return(
-
-        
-            <Col>
                 <Card>
                     <Card.Body>
 
-                        <Card.Title><h2>{foodItem.item_name}</h2></Card.Title>
-                        <Card.Img  className="card-image" src={foodItemImage} alt={foodItem.item_name}/>
-                        <ListGroup.Item>
+                        <CardHeader><h2>{foodItem.item_name}</h2></CardHeader>
+                        <img className="card-image" src={foodItemImage} alt={foodItem.item_name}/>
                             <h4>Type: {foodItem.type}</h4>
                             <p>Quantity: {foodItem.quantity}</p>
-                        </ListGroup.Item>
                         
                     </Card.Body>
                 </Card>
-            </Col>
     )
 }
 
