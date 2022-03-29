@@ -90,7 +90,13 @@ function Fridge(){
 
         fetch(`http://localhost:3004/fridge/${foodItemToIncrement.id}`, configObj)
         .then(res => res.json())
-        .then(updatedFoodItem => setFridgeData([...fridgeData, updatedFoodItem]));
+        .then(updatedFoodItem => setFridgeData((fridgeData) => fridgeData.map((foodObject)=>{
+            if (updatedFoodItem.id === foodObject.id){
+                return updatedFoodItem
+            }else{
+                return foodObject
+            }
+        })));
     }
 
 

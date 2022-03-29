@@ -8,7 +8,43 @@ import IconButton from '@mui/material/IconButton';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 function FoodCard({deleteItem, foodItem, incrementQuantity, fridgeData, setFridgeData}) {
-
+let foodTypeLabel
+    switch(foodItem.type){
+        
+        case "Vegetable":
+            foodTypeLabel = "red";
+            break;
+        case "Fats + Oils":
+            foodTypeLabel = "olive";
+            break;
+        case "Fish":
+            foodTypeLabel = "teal";
+            break;
+        case "Fruit":
+            foodTypeLabel = "purple";
+            break;
+        case "Grains, Nuts and Baking":
+            foodTypeLabel = "orange";
+            break;
+        case "Herbs and Spices":
+            foodTypeLabel = "green";
+             break;
+        case "Meat":
+            foodTypeLabel = "red";
+            break;
+        case "Dairy":
+            foodTypeLabel = "ivory";
+            break;
+        case "Poultry":
+            foodTypeLabel = "salmon";
+             break;
+        case "Other":
+            foodTypeLabel = "gray";
+            break;
+        default :
+            foodTypeLabel = "gray";
+        
+    }
     function handleClickDelete (){
         deleteItem(foodItem);
     }   
@@ -35,7 +71,7 @@ function FoodCard({deleteItem, foodItem, incrementQuantity, fridgeData, setFridg
                         <AddCircleIcon/>
                     </IconButton>
                     {/* //This is a placeholder style. We want to make it so that when an item is of x category, it turns y color. */}
-                    <h4 style={{backgroundColor : "#E8FFC2", color : "black"}}>{foodItem.type}</h4>
+                    <h4 style={{backgroundColor : {foodTypeLabel}, color : "black"}}>{foodItem.type}</h4>
                     
                 </Card>
             </Grid>
