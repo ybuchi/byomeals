@@ -43,12 +43,9 @@ function Fridge(){
             .then(res => res.json())
             .then(newFoodItem => setFridgeData([...fridgeData, newFoodItem]))
         })
-
-       
     }
 
     useEffect(()=>{
-
         //We're setting the fridgeData state to contain all items currently in the user's fridge in JSON DB
         fetch('http://localhost:3004/fridge')
         .then(res => res.json())
@@ -81,7 +78,6 @@ function Fridge(){
         <>
             <AddItemForm newItemForm={newItemForm} newItemFormState={newItemFormState} addNewItem={addNewItem}/>
             <FoodContainer fridgeData={fridgeData} incrementQuantity={incrementQuantity} />
-            
         </>
     )
 }
