@@ -3,3 +3,12 @@
     margin: 20px;
     font-style: "Caveat Brush", cursive;
 }
+.main-title{
+    text-align: center;
+}
+.card-header{
+    text-align: center;
+}
+.card-image{
+    margin: auto;
+}
