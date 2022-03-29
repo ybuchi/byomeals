@@ -21,7 +21,10 @@ function Fridge(){
         image: "",
         isInFridge: true
     })
-    const foodInFridge = fridgeData.filter((foodObject) => foodObject.isInFridge)
+    const [searchState, setSearchState] = useState("") 
+    const foodInFridge = fridgeData.filter((foodObject) => {
+        return foodObject.isInFridge && foodObject.item_name.toLowerCase().includes(searchState.toLowerCase());
+    })
 
     function addNewItem(newItem){
  
@@ -41,6 +44,10 @@ function Fridge(){
             .then(res => res.json())
             .then(newFoodItem => setFridgeData([...fridgeData, newFoodItem]))
         })
+    }
+
+    function handleSearchChange (e) {
+        setSearchState(e.target.value);
     }
 
     function deleteItem(foodItemToDelete){
@@ -102,8 +109,16 @@ function Fridge(){
 
     return(
         <>
-            <AddItemForm newItemForm={newItemForm} newItemFormState={newItemFormState} addNewItem={addNewItem}/>
-            <FoodContainer foodInFridge ={foodInFridge} deleteItem={deleteItem} setFridgeData={setFridgeData} fridgeData={fridgeData} incrementQuantity={incrementQuantity} />
+            <AddItemForm newItemForm={newItemForm} 
+                         newItemFormState={newItemFormState} 
+                         addNewItem={addNewItem}/>
+            <FoodContainer searchState={searchState} 
+                           handleSearchChange={handleSearchChange} 
+                           foodInFridge ={foodInFridge} 
+                           deleteItem={deleteItem} 
+                           setFridgeData={setFridgeData} 
+                           fridgeData={fridgeData} 
+                           incrementQuantity={incrementQuantity} />
         </>
     )
 }
