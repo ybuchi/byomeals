@@ -27,23 +27,55 @@ function Fridge(){
     })
 
     function addNewItem(newItem){
- 
-        fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=52ce18e1&app_key=94901fd21fbdbc510e92bd7736f43784&ingr=${newItem.item_name.toLowerCase().trim()}&nutrition-type=cooking`)
-        .then(res => res.json())
-        .then(itemAPIData => {
-            const configObject = {
-                method: "POST",
-                headers : {
-                    'Content-Type' : 'application/json',
-                    Accept : 'application/json'
-                },
-                body: JSON.stringify({...newItemForm, image : itemAPIData.parsed[0].food.image})
-            }
 
-            fetch('http://localhost:3004/fridge', configObject)
-            .then(res => res.json())
-            .then(newFoodItem => setFridgeData([...fridgeData, newFoodItem]))
-        })
+        //If the new item name matches one that is already in the fridge, then prompt the user as to whether they want to add this item again.
+        for (const foodObject of fridgeData){
+            
+            if(foodObject.item_name.toLowerCase().trim().includes(newItem.item_name.toLowerCase().trim())){
+                let confirmDuplicate = window.confirm(`It seems you have a similar item in your fridge: ${foodObject.item_name}. Are you sure you want to add ${newItem.item_name} to your fridge?`)
+                if(confirmDuplicate){
+                    fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=52ce18e1&app_key=94901fd21fbdbc510e92bd7736f43784&ingr=${newItem.item_name.toLowerCase().trim()}&nutrition-type=cooking`)
+                    .then(res => res.json())
+                    .then(itemAPIData => {
+                    const configObject = {
+                    method: "POST",
+                    headers : {
+                        'Content-Type' : 'application/json',
+                        Accept : 'application/json'
+                    },
+                    body: JSON.stringify({...newItemForm, image : itemAPIData.parsed[0].food.image})
+                    }
+
+                    fetch('http://localhost:3004/fridge', configObject)
+                    .then(res => res.json())
+                    .then(newFoodItem => setFridgeData([...fridgeData, newFoodItem]))
+                    })
+                    alert("Item Successfully Added to your Fridge!")
+                } else {
+                    alert("Action cancelled.")
+                }
+                break;
+            }else{
+                fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=52ce18e1&app_key=94901fd21fbdbc510e92bd7736f43784&ingr=${newItem.item_name.toLowerCase().trim()}&nutrition-type=cooking`)
+                    .then(res => res.json())
+                    .then(itemAPIData => {
+                        const configObject = {
+                            method: "POST",
+                            headers : {
+                                'Content-Type' : 'application/json',
+                                Accept : 'application/json'
+                            },
+                            body: JSON.stringify({...newItemForm, image : itemAPIData.parsed[0].food.image})
+                        }
+
+                        fetch('http://localhost:3004/fridge', configObject)
+                        .then(res => res.json())
+                        .then(newFoodItem => setFridgeData([...fridgeData, newFoodItem]))
+                    })
+            }
+        }
+
+        
     }
 
     function handleSearchChange (e) {
