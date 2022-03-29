@@ -16,7 +16,7 @@ render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
-        <Route index element={<App />}/>
+        
         <Route path="fridge" element={<Fridge />} />
         <Route path="/recipes" element={<Recommended />} />
       </Route>
