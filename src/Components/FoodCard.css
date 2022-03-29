@@ -5,3 +5,34 @@
 .food-card {
     font-family: "PT Sans", sans-serif;
 }
+.vegetable{
+    background-color: #B3E283;
+}
+.olive-oils {
+    background-color: #E8E46E;
+}
+.fish {
+    background-color: #D6ECFA;
+}
+.fruit {
+    background-color: #C060A1;
+}
+.grains-nuts-baking{
+    background-color: #F9D5BB;
+}
+.herbs-spices{
+    background-color: #810000;
+}
+.meat{
+    background-color: #810000;
+    color: white;
+}
+.dairy{
+    background-color: #E8E2DB;
+}
+.poultry{
+    background-color: #99B19C;
+}
+.other{
+    background-color: #FDF6F0;
+}

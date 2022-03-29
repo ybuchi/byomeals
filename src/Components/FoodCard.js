@@ -12,37 +12,37 @@ let foodTypeLabel
     switch(foodItem.type){
         
         case "Vegetable":
-            foodTypeLabel = "red";
+            foodTypeLabel = "vegetable";
             break;
         case "Fats + Oils":
-            foodTypeLabel = "olive";
+            foodTypeLabel = "olive-oils";
             break;
         case "Fish":
-            foodTypeLabel = "teal";
+            foodTypeLabel = "fish";
             break;
         case "Fruit":
-            foodTypeLabel = "purple";
+            foodTypeLabel = "fruit";
             break;
         case "Grains, Nuts and Baking":
-            foodTypeLabel = "orange";
+            foodTypeLabel = "grains-nuts-baking";
             break;
         case "Herbs and Spices":
-            foodTypeLabel = "green";
+            foodTypeLabel = "herbs-spices";
              break;
         case "Meat":
-            foodTypeLabel = "red";
+            foodTypeLabel = "meat";
             break;
         case "Dairy":
-            foodTypeLabel = "ivory";
+            foodTypeLabel = "dairy";
             break;
         case "Poultry":
-            foodTypeLabel = "salmon";
+            foodTypeLabel = "poultry";
              break;
         case "Other":
-            foodTypeLabel = "gray";
+            foodTypeLabel = "other";
             break;
         default :
-            foodTypeLabel = "gray";
+            foodTypeLabel = "";
         
     }
     function handleClickDelete (){
@@ -71,7 +71,7 @@ let foodTypeLabel
                         <AddCircleIcon/>
                     </IconButton>
                     {/* //This is a placeholder style. We want to make it so that when an item is of x category, it turns y color. */}
-                    <h4 style={{backgroundColor : {foodTypeLabel}, color : "black"}}>{foodItem.type}</h4>
+                    <h4 className={foodTypeLabel}>{foodItem.type}</h4>
                     
                 </Card>
             </Grid>

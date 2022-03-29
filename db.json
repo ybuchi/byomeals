@@ -65,7 +65,7 @@
       "type": "",
       "quantity": 4,
       "image": "https://www.edamam.com/food-img/f58/f588658627c59d5041e4664119829aa9.jpg",
-      "isInFridge": true,
+      "isInFridge": false,
       "id": 8
     },
     {
