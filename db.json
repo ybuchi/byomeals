@@ -10,7 +10,55 @@
       "quantity": 5,
       "type": "fruit",
       "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
-      "isInFridge" : true
+      "isInFridge": false
+    },
+    {
+      "item_name": "broccoli",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/3e4/3e47317a3dd54dc911b9c44122285df1.jpg",
+      "isInFridge": false,
+      "id": 2
+    },
+    {
+      "item_name": "pasta",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/296/296ff2b02ef3822928c3c923e22c7d19.jpg",
+      "isInFridge": false,
+      "id": 3
+    },
+    {
+      "item_name": "pasta",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/296/296ff2b02ef3822928c3c923e22c7d19.jpg",
+      "isInFridge": false,
+      "id": 4
+    },
+    {
+      "item_name": "banana",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
+      "isInFridge": false,
+      "id": 5
+    },
+    {
+      "item_name": "banana",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
+      "isInFridge": false,
+      "id": 6
+    },
+    {
+      "item_name": "banana",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
+      "isInFridge": false,
+      "id": 7
     }
   ]
 }

@@ -7,8 +7,11 @@ import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import IconButton from '@mui/material/IconButton';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
-function FoodCard({foodItem, incrementQuantity, decrementQuantity}) {
+function FoodCard({deleteItem, foodItem, incrementQuantity, fridgeData, setFridgeData}) {
 
+    function handleClickDelete (){
+        deleteItem(foodItem);
+    }   
     function handleClickIncrement(e){
         const updatedFoodItem = {...foodItem, quantity : ++foodItem.quantity}
          incrementQuantity(updatedFoodItem)
@@ -20,7 +23,7 @@ function FoodCard({foodItem, incrementQuantity, decrementQuantity}) {
     return(
             <Grid item xs={12} sm={6} md={3} lg={2}>
                 <Card className="food-card" >
-                    <h2 className="card-header">{foodItem.item_name}<span><IconButton><DeleteOutlineIcon /></IconButton></span></h2>
+                    <h2 className="card-header">{foodItem.item_name}<span><IconButton onClick={handleClickDelete}><DeleteOutlineIcon /></IconButton></span></h2>
                     
                     <img className="card-image" src={foodItem.image} alt={foodItem.item_name}/><br/>
     

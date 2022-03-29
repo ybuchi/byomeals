@@ -21,6 +21,7 @@ function Fridge(){
         image: "",
         isInFridge: true
     })
+    const foodInFridge = fridgeData.filter((foodObject) => foodObject.isInFridge)
 
     function addNewItem(newItem){
  
@@ -35,10 +36,33 @@ function Fridge(){
                 },
                 body: JSON.stringify({...newItemForm, image : itemAPIData.parsed[0].food.image})
             }
+
             fetch('http://localhost:3004/fridge', configObject)
             .then(res => res.json())
             .then(newFoodItem => setFridgeData([...fridgeData, newFoodItem]))
         })
+    }
+
+    function deleteItem(foodItemToDelete){
+        console.log(foodItemToDelete);
+        const configObj = {
+            method: "PATCH",
+            headers: {
+                'Content-Type' : 'application/json',
+                Accept: 'application.json'
+            },
+            body: JSON.stringify({...foodItemToDelete, isInFridge : false})
+        }
+
+        fetch(`http://localhost:3004/fridge/${foodItemToDelete.id}`, configObj)
+        .then(res => res.json())
+        .then(deletedItem => setFridgeData((fridgeData) => fridgeData.map((foodObject) => {
+            if(foodObject.id === deletedItem.id){
+                return deletedItem
+            }else{
+                return foodObject
+            }
+        })));
     }
 
     useEffect(()=>{
@@ -73,7 +97,7 @@ function Fridge(){
     return(
         <>
             <AddItemForm newItemForm={newItemForm} newItemFormState={newItemFormState} addNewItem={addNewItem}/>
-            <FoodContainer fridgeData={fridgeData} incrementQuantity={incrementQuantity} />
+            <FoodContainer foodInFridge ={foodInFridge} deleteItem={deleteItem} setFridgeData={setFridgeData} fridgeData={fridgeData} incrementQuantity={incrementQuantity} />
         </>
     )
 }
