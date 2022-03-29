@@ -10,23 +10,31 @@
       "quantity": 5,
       "type": "fruit",
       "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
-      "isInFridge": false
+      "isInFridge": true
     },
     {
-      "item_name": "banana",
-      "type": "",
+      "item_name": "sirloin steak",
+      "type": "Meat",
       "quantity": 0,
-      "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
+      "image": "https://www.edamam.com/food-img/4f1/4f10105d5c8178f25590ca6dfcd37fca.jpg",
       "isInFridge": true,
       "id": 2
     },
     {
-      "item_name": "banana",
-      "type": "",
+      "item_name": "cumin",
+      "type": "Herbs and Spices",
       "quantity": 0,
-      "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
-      "isInFridge": false,
+      "image": "https://www.edamam.com/food-img/07e/07e2a4eb77ce46591033846504817d35.jpg",
+      "isInFridge": true,
       "id": 3
+    },
+    {
+      "item_name": "cumin",
+      "type": "Herbs and Spices",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/07e/07e2a4eb77ce46591033846504817d35.jpg",
+      "isInFridge": true,
+      "id": 4
     }
   ]
 }

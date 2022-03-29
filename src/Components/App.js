@@ -1,16 +1,10 @@
 
-import Recommended from './Recommended';
-import Fridge from "./Fridge";
 import { Outlet, Link } from "react-router-dom";
-import { useState, useEffect } from "react"
-import SearchBar from "./SearchBar";
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import FilterFridge from "./FilterFridge";
 import "./App.css"
 
 
