@@ -59,6 +59,30 @@
       "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
       "isInFridge": false,
       "id": 7
+    },
+    {
+      "item_name": "parmesan",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/f58/f588658627c59d5041e4664119829aa9.jpg",
+      "isInFridge": true,
+      "id": 8
+    },
+    {
+      "item_name": "sugar",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/ecb/ecb3f5aaed96d0188c21b8369be07765.jpg",
+      "isInFridge": true,
+      "id": 9
+    },
+    {
+      "item_name": "honey",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/198/198c7b25c23b4235b4cc33818c7b335f.jpg",
+      "isInFridge": true,
+      "id": 10
     }
   ]
 }
