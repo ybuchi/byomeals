@@ -16,6 +16,7 @@ import Grid from '@mui/material/Grid';
 import { useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import ActionCard from './ActionCard'
+import ContentCard from './ContentCard';
 
 
 const useStyles = makeStyles({
@@ -25,7 +26,7 @@ const useStyles = makeStyles({
         paddingRight: "50px"
     }
 })
-const RecipeList = ({recRecipe}) => {
+const RecipeList = ({recRecipe, fridgeStock}) => {
     const classes = useStyles()
     const ExpandMore = styled((props) => {
         const { expand, ...other } = props;
@@ -66,6 +67,7 @@ const RecipeList = ({recRecipe}) => {
                     alt={title}
                 />
                 <CardContent>
+                    <ContentCard recipe={recipe}/>
                     <Typography variant="subtitle2" color="text.secondary">
                     Fridge Ingredients ({usedIngredientCount}): 
                     </Typography >
@@ -92,7 +94,7 @@ const RecipeList = ({recRecipe}) => {
                     })}
                     </Typography>
                 </CardContent>
-                <ActionCard recipe={recipe}/>
+                <ActionCard recipe={recipe} fridgeStock={fridgeStock}/>
             </Card>
         </Grid>
         )

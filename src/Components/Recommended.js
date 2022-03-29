@@ -59,7 +59,7 @@ const Recommended = () => {
                 <FilterFridge fridgeStock={fridgeStock} setSelectOption={setSelectOption}/>
                 </Toolbar>
             </AppBar>
-            <RecipeList recRecipe={recRecipes}/>
+            <RecipeList recRecipe={recRecipes} fridgeStock={fridgeStock}/>
         </>
     )
     
