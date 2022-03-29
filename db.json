@@ -14,7 +14,7 @@
     },
     {
       "item_name": "sirloin steak",
-      "type": "",
+      "type": "Meat",
       "quantity": 0,
       "image": "https://www.edamam.com/food-img/4f1/4f10105d5c8178f25590ca6dfcd37fca.jpg",
       "isInFridge": true,
@@ -35,30 +35,6 @@
       "image": "https://www.edamam.com/food-img/07e/07e2a4eb77ce46591033846504817d35.jpg",
       "isInFridge": true,
       "id": 4
-    },
-    {
-      "item_name": "grapes",
-      "type": "Fruit",
-      "quantity": 0,
-      "image": "https://www.edamam.com/food-img/ca5/ca55ac74deb991d159942c65777115df.jpg",
-      "isInFridge": true,
-      "id": 5
-    },
-    {
-      "item_name": "grapes",
-      "type": "Fruit",
-      "quantity": 0,
-      "image": "https://www.edamam.com/food-img/ca5/ca55ac74deb991d159942c65777115df.jpg",
-      "isInFridge": true,
-      "id": 6
-    },
-    {
-      "item_name": "grapes",
-      "type": "Fruit",
-      "quantity": 0,
-      "image": "https://www.edamam.com/food-img/ca5/ca55ac74deb991d159942c65777115df.jpg",
-      "isInFridge": true,
-      "id": 7
     }
   ]
 }
