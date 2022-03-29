@@ -4,7 +4,8 @@ import Grid from '@mui/material/Grid';
 import "./FoodContainer.css";
 
 function FoodContainer({fridgeData, incrementQuantity, decrementQuantity}) {
-    const mappedFoodItems = fridgeData.map(foodItem => <FoodCard key={foodItem.id} foodItem={foodItem} incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity}/>)
+    const foodsInFridge = fridgeData.filter((foodItem)=>foodItem.isInFridge)
+    const mappedFoodItems = foodsInFridge.map(foodItem => <FoodCard key={foodItem.id} foodItem={foodItem} incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity}/>)
     return(
         <>
             <h1 className="main-title">Fridge</h1>
@@ -13,7 +14,6 @@ function FoodContainer({fridgeData, incrementQuantity, decrementQuantity}) {
             </Grid>
             
         </>
-
     )
 }
 export default FoodContainer;
