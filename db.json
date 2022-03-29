@@ -81,7 +81,7 @@
       "type": "",
       "quantity": 0,
       "image": "https://www.edamam.com/food-img/198/198c7b25c23b4235b4cc33818c7b335f.jpg",
-      "isInFridge": true,
+      "isInFridge": false,
       "id": 10
     },
     {
@@ -123,6 +123,46 @@
       "image": "https://www.edamam.com/food-img/b4c/b4c739e76a6f2172b7ad49d0aa41d5aa.jpg",
       "isInFridge": true,
       "id": 15
+    },
+    {
+      "item_name": "Gnocchi",
+      "type": "Grains, Nuts and Baking",
+      "quantity": "1",
+      "image": "https://www.edamam.com/food-img/8ae/8aeb40c14bcd25ffd5cfc68efd41de0a.jpg",
+      "isInFridge": true,
+      "id": 16
+    },
+    {
+      "item_name": "sirloin steak",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/4f1/4f10105d5c8178f25590ca6dfcd37fca.jpg",
+      "isInFridge": true,
+      "id": 17
+    },
+    {
+      "item_name": "salt",
+      "type": "Herbs and Spices",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg",
+      "isInFridge": true,
+      "id": 18
+    },
+    {
+      "item_name": "cumin",
+      "type": "Herbs and Spices",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/07e/07e2a4eb77ce46591033846504817d35.jpg",
+      "isInFridge": true,
+      "id": 19
+    },
+    {
+      "item_name": "chicken broth",
+      "type": "Other",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/26a/26a10c4cb4e07bab54d8a687ef5ac7d8.jpg",
+      "isInFridge": true,
+      "id": 20
     }
   ]
 }
