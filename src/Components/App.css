@@ -1,0 +1,16 @@
+.navbar {
+    background-color: #0E185F;
+    color: white;
+}
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-family: 'PT Sans', sans-serif;
+    margin-left: 20px;
+    margin-righ: 20px;
+}
+#nav-logo {
+    font-family: 'Skranji', cursive;
+    font-size: 1.5em;
+    color: #00FFDD
+}
