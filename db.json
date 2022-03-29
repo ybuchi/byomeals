@@ -21,7 +21,7 @@
     {
       "item_name": "Gnocchi",
       "type": "Poultry",
-      "quantity": 9,
+      "quantity": 11,
       "id": 3,
       "image": "https://www.edamam.com/food-img/8ae/8aeb40c14bcd25ffd5cfc68efd41de0a.jpg"
     },
@@ -47,39 +47,25 @@
       "id": 9
     },
     {
-      "item_name": "Soy sauce",
-      "type": "Fats and Oils",
-      "quantity": 1,
+      "item_name": "Broccoli",
+      "type": "Vegetable",
+      "quantity": 0,
       "image": "",
       "id": 10
     },
     {
-      "item_name": "Soy",
+      "item_name": "Eggs",
       "type": "Vegetable",
-      "quantity": 1,
-      "image": "https://www.edamam.com/food-img/f56/f562e461eb0618f367f538b836c17b82.jpg",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/3e4/3e47317a3dd54dc911b9c44122285df1.jpg",
       "id": 11
     },
     {
-      "item_name": "flour",
-      "type": "Grains, Nuts and Baking",
+      "item_name": "Pasta",
+      "type": "",
       "quantity": 0,
-      "image": "",
+      "image": "https://www.edamam.com/food-img/296/296ff2b02ef3822928c3c923e22c7d19.jpg",
       "id": 12
-    },
-    {
-      "item_name": "arborio rice",
-      "type": "Grains, Nuts and Baking",
-      "quantity": 0,
-      "image": "https://www.edamam.com/food-img/b4c/b4c739e76a6f2172b7ad49d0aa41d5aa.jpg",
-      "id": 13
-    },
-    {
-      "item_name": "pork",
-      "type": "Meat",
-      "quantity": 2,
-      "image": "",
-      "id": 14
     }
   ]
 }

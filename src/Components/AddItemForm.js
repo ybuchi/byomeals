@@ -18,7 +18,7 @@ function AddItemForm({newItemForm, newItemFormState, addNewItem}) {
 
     function handleNewItemSubmit(e){
         e.preventDefault();
-        addNewItem(newItemForm)
+        addNewItem(newItemForm);
     }
     return (
         <div className="form-container font-ptsans-bold">
@@ -49,7 +49,7 @@ function AddItemForm({newItemForm, newItemFormState, addNewItem}) {
                                     label="Type"
                                 >
                                     <MenuItem value="">
-                                        <em>None</em>
+                                        <em>Fats and Oils</em>
                                     </MenuItem>
                                     <MenuItem value="Fats and Oils">Fats + Oils</MenuItem>
                                     <MenuItem value="Fish">Fish</MenuItem>

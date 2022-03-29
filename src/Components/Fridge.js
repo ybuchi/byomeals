@@ -16,32 +16,35 @@ function Fridge(){
     const [fridgeData, setFridgeData] = useState([])
     const [newItemForm, newItemFormState] = useState({
         item_name : "",
-        type : "Vegetable",
+        type : "",
         quantity : 0,
-        image : ""
+        image: ""
     })
 
 
     function addNewItem(newItem){
 
         //TO DO: Make a fetch request to edamam API and use newItem item name to populate query.
-        const configObject = {
-            method: "POST",
-            headers : {
-                'Content-Type' : 'application/json',
-                Accept : 'application/json'
-            },
-            body: JSON.stringify(newItem)
-        }
-
+        
+        
+            
         fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=52ce18e1&app_key=94901fd21fbdbc510e92bd7736f43784&ingr=${newItem.item_name.toLowerCase().trim()}&nutrition-type=cooking`)
-        .then(res=> res.json())
-        .then(itemAPIData => newItemFormState({...newItemForm, image : itemAPIData.hints[0].food.image}))
-        .then(()=>{
+        .then(res => res.json())
+        .then(itemAPIData => {
+            const configObject = {
+                method: "POST",
+                headers : {
+                    'Content-Type' : 'application/json',
+                    Accept : 'application/json'
+                },
+                body: JSON.stringify({...newItemForm, image : itemAPIData.parsed[0].food.image})
+            }
             fetch('http://localhost:3004/fridge', configObject)
             .then(res => res.json())
             .then(newFoodItem => setFridgeData([...fridgeData, newFoodItem]))
-        });
+        })
+
+       
     }
 
     useEffect(()=>{

@@ -1,13 +1,12 @@
 import React from "react";
 import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
 import Grid from '@mui/material/Grid';
 import "./FoodCard.css";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import IconButton from '@mui/material/IconButton';
 
-function FoodCard({foodItem, setFridgeData, incrementQuantity, decrementQuantity}) {
+function FoodCard({foodItem, incrementQuantity, decrementQuantity}) {
 
     function handleClickIncrement(e){
         const updatedFoodItem = {...foodItem, quantity : ++foodItem.quantity}
