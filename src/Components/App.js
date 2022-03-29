@@ -1,5 +1,7 @@
 
 import Recommended from './Recommended';
+import '../App.css';
+import Fridge from "./Fridge";
 
 function App() {
   
@@ -7,6 +9,8 @@ function App() {
     <div className="App">
       
       <Recommended />
+      {/* Routes will go here in the future */}
+      <Fridge />
     </div>
   );
 }
