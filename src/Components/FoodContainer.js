@@ -23,7 +23,7 @@ function FoodContainer({foodInFridge, deleteItem, fridgeData, setFridgeData, inc
             <h1 className="main-title">Fridge</h1>
             <TextField 
                 className="ingredient-search"  
-                label="Search Ingredient"
+                label="Search by Ingredient or Ingredient Type"
                 InputProps={{style:{fontSize : "40px", fontFamily : "'Caveat Brush', cursive"}}}
                 InputLabelProps={{style: {fontSize : "30px", fontFamily : "'PT Sans', sans-serif"}}} 
                 variant="standard"
