@@ -1,25 +1,168 @@
 {
-  "user": [{
-    "userInfo" : {
-      "first_name" : "Bob",
-      "last_name" : "Burger"
-    }
+  "user_info": {
+    "first_name": "Bob",
+    "last_name": "Vance"
   },
-  {
-    "fridge" : [
-      {
-        "id" : 1,
-        "item_name" : "banana",
-        "type" : "fruit",
-        "quantity" : 4
-      },
-      {
-        "id" : 2,
-        "item_name" : "broccoli",
-        "type" : "vegetable",
-        "quantity" : 5
-      }
-    ]
-  }  
-]
+  "fridge": [
+    {
+      "id": 1,
+      "item_name": "bananas",
+      "quantity": 5,
+      "type": "fruit",
+      "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
+      "isInFridge": false
+    },
+    {
+      "item_name": "broccoli",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/3e4/3e47317a3dd54dc911b9c44122285df1.jpg",
+      "isInFridge": false,
+      "id": 2
+    },
+    {
+      "item_name": "pasta",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/296/296ff2b02ef3822928c3c923e22c7d19.jpg",
+      "isInFridge": false,
+      "id": 3
+    },
+    {
+      "item_name": "pasta",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/296/296ff2b02ef3822928c3c923e22c7d19.jpg",
+      "isInFridge": false,
+      "id": 4
+    },
+    {
+      "item_name": "banana",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
+      "isInFridge": false,
+      "id": 5
+    },
+    {
+      "item_name": "banana",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
+      "isInFridge": false,
+      "id": 6
+    },
+    {
+      "item_name": "banana",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
+      "isInFridge": false,
+      "id": 7
+    },
+    {
+      "item_name": "parmesan",
+      "type": "",
+      "quantity": 4,
+      "image": "https://www.edamam.com/food-img/f58/f588658627c59d5041e4664119829aa9.jpg",
+      "isInFridge": false,
+      "id": 8
+    },
+    {
+      "item_name": "sugar",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/ecb/ecb3f5aaed96d0188c21b8369be07765.jpg",
+      "isInFridge": true,
+      "id": 9
+    },
+    {
+      "item_name": "honey",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/198/198c7b25c23b4235b4cc33818c7b335f.jpg",
+      "isInFridge": false,
+      "id": 10
+    },
+    {
+      "item_name": "gnocchi",
+      "type": "Other",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/8ae/8aeb40c14bcd25ffd5cfc68efd41de0a.jpg",
+      "isInFridge": false,
+      "id": 11
+    },
+    {
+      "item_name": "asparagus",
+      "type": "Other",
+      "quantity": 2,
+      "image": "https://www.edamam.com/food-img/159/159dec8bbcabf7ed641a57b40a2d2eb9.jpg",
+      "isInFridge": false,
+      "id": 12
+    },
+    {
+      "item_name": "asparagus",
+      "type": "Vegetable",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/159/159dec8bbcabf7ed641a57b40a2d2eb9.jpg",
+      "isInFridge": true,
+      "id": 13
+    },
+    {
+      "item_name": "banana",
+      "type": "Fruit",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
+      "isInFridge": true,
+      "id": 14
+    },
+    {
+      "item_name": "flour",
+      "type": "Grains, Nuts and Baking",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/b4c/b4c739e76a6f2172b7ad49d0aa41d5aa.jpg",
+      "isInFridge": true,
+      "id": 15
+    },
+    {
+      "item_name": "Gnocchi",
+      "type": "Grains, Nuts and Baking",
+      "quantity": "1",
+      "image": "https://www.edamam.com/food-img/8ae/8aeb40c14bcd25ffd5cfc68efd41de0a.jpg",
+      "isInFridge": true,
+      "id": 16
+    },
+    {
+      "item_name": "sirloin steak",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/4f1/4f10105d5c8178f25590ca6dfcd37fca.jpg",
+      "isInFridge": true,
+      "id": 17
+    },
+    {
+      "item_name": "salt",
+      "type": "Herbs and Spices",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg",
+      "isInFridge": true,
+      "id": 18
+    },
+    {
+      "item_name": "cumin",
+      "type": "Herbs and Spices",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/07e/07e2a4eb77ce46591033846504817d35.jpg",
+      "isInFridge": true,
+      "id": 19
+    },
+    {
+      "item_name": "chicken broth",
+      "type": "Other",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/26a/26a10c4cb4e07bab54d8a687ef5ac7d8.jpg",
+      "isInFridge": true,
+      "id": 20
+    }
+  ]
 }
