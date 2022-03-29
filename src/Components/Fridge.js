@@ -23,7 +23,7 @@ function Fridge(){
     })
     const [searchState, setSearchState] = useState("") 
     const foodInFridge = fridgeData.filter((foodObject) => {
-        return foodObject.isInFridge && foodObject.item_name.toLowerCase().includes(searchState.toLowerCase());
+        return foodObject.isInFridge && (foodObject.item_name.toLowerCase().trim().includes(searchState.toLowerCase().trim()) || foodObject.type.toLowerCase().trim().includes(searchState.toLowerCase().trim()));
     })
 
     function addNewItem(newItem){
