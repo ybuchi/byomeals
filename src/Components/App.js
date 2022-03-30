@@ -121,24 +121,24 @@ function App() {
           </IconButton>
           ) : null
           }
-          <Typography id="nav-logo" variant="h6" component="div">BYOMeal</Typography>
+          <Typography id="nav-logo" variant="h6" component="div"><span id="nav-logo-span">BYO</span>Meals</Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Button 
-            sx={{ my: 2, color: 'white', display: 'block' }}
+            sx={{ my: 2, mx: 3, fontFamily: "'PT Sans', sans-serif", fontWeight : "bold", color: 'white', display: 'block' }}
             component={RouterLink}
             to="/"
             >
               Home
             </Button>
             <Button 
-            sx={{ my: 2, color: 'white', display: 'block' }}
+            sx={{ my: 2, mx:3, fontFamily: "'PT Sans', sans-serif", fontWeight : "bold", color: 'white', display: 'block' }}
             component={RouterLink}
             to="fridge"
             >
               Fridge
             </Button>
             <Button 
-            sx={{ my: 2, color: 'white', display: 'block' }}
+            sx={{ my: 2, mx: 3, fontFamily: "'PT Sans', sans-serif", fontWeight : "bold", color: 'white', display: 'block' }}
             component={RouterLink}
             to="/recipes"
             >
