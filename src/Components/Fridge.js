@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import AddItemForm from "./AddItemForm";
 import FoodContainer from "./FoodContainer";
-
+import { styled, useTheme, makeStyles } from '@mui/material/styles';
+import Container from '@mui/material/Container';
+import Toolbar from '@material-ui/core/Toolbar';
+import { ClassNames } from "@emotion/react";
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+// import "./Fridge.css"
 //My API key FDA
 // YjNQFF8radU2ks6rvpawGQmyYWLbVmbLU9C5W2c0
 
@@ -11,8 +17,8 @@ import FoodContainer from "./FoodContainer";
 // 94901fd21fbdbc510e92bd7736f43784
 
 
-
 function Fridge(){
+    // const classes = useStyles()
     const [fridgeData, setFridgeData] = useState([])
     const [newItemForm, newItemFormState] = useState({
         item_name : "",
@@ -140,7 +146,10 @@ function Fridge(){
 
 
     return(
-        <>
+        <Box sx={{ flexGrow:1, mt:8}}>
+
+        <Grid>
+
             <AddItemForm newItemForm={newItemForm} 
                          newItemFormState={newItemFormState} 
                          addNewItem={addNewItem}/>
@@ -151,7 +160,10 @@ function Fridge(){
                            setFridgeData={setFridgeData} 
                            fridgeData={fridgeData} 
                            incrementQuantity={incrementQuantity} />
-        </>
+        </Grid>  
+        
+        </Box>
+        
     )
 }
 
