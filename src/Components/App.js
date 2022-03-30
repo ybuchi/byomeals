@@ -105,7 +105,7 @@ function App() {
   
   return (
     <>
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', backgroundColor: '#0E185F' }}>
       <CssBaseline />
       <AppBar className="navbar" position="fixed" open={open}>
         <Container maxWidth="xl">
