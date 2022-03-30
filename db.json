@@ -73,7 +73,7 @@
       "type": "Dairy",
       "quantity": 0,
       "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg",
-      "isInFridge": true,
+      "isInFridge": false,
       "id": 9
     },
     {
@@ -81,8 +81,16 @@
       "type": "Vegetable",
       "quantity": 0,
       "image": "https://www.edamam.com/food-img/822/8221f2141e8dafd469414b20777735ca.jpg",
-      "isInFridge": true,
+      "isInFridge": false,
       "id": 10
+    },
+    {
+      "item_name": "paprika",
+      "type": "Herbs and Spices",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/474/474d63763b9d8b9da98c5f43a114648c.jpg",
+      "isInFridge": true,
+      "id": 11
     }
   ]
 }

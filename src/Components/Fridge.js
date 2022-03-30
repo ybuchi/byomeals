@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
 import AddItemForm from "./AddItemForm";
 import FoodContainer from "./FoodContainer";
 
@@ -13,15 +14,9 @@ import FoodContainer from "./FoodContainer";
 
 
 function Fridge(){
-    const [fridgeData, setFridgeData] = useState([])
-    const [newItemForm, newItemFormState] = useState({
-        item_name : "",
-        type : "",
-        quantity : 0,
-        image: "",
-        isInFridge: true
-    })
-    const [searchState, setSearchState] = useState("") 
+
+    const [fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState] = useOutletContext();
+
     const foodInFridge = fridgeData.filter((foodObject) => {
         return foodObject.isInFridge && (foodObject.item_name.toLowerCase().trim().includes(searchState.toLowerCase().trim()) || foodObject.type.toLowerCase().trim().includes(searchState.toLowerCase().trim()));
     })
@@ -135,7 +130,7 @@ function Fridge(){
         // fetch('https://api.edamam.com/api/food-database/v2/parser?app_id=52ce18e1&app_key=94901fd21fbdbc510e92bd7736f43784&ingr=banana&nutrition-type=cooking')
         // .then(res => res.json())
         // .then(data => console.log(data));
-    },[])
+    },[setFridgeData])
 
     function incrementQuantity(foodItemToIncrement){
 
