@@ -1,15 +1,9 @@
-.fridge-title-summary{
+#recipe-title-summary{
     font-size: 30px;
     text-align: center;
     font-family: "Skranji", cursive;
 }
-.fridge-summary-paper {
+.recipe-summary-paper {
     padding: 0px 10px 10px 10px;
     font-family: "PT Sans", sans-serif;
-}
-.numberOf-itemsInFridge{
-    text-align: center;
-}
-.number-label {
-    font-weight: bold;
 }
