@@ -17,7 +17,7 @@
       "type": "",
       "quantity": 0,
       "image": "https://www.edamam.com/food-img/4f1/4f10105d5c8178f25590ca6dfcd37fca.jpg",
-      "isInFridge": true,
+      "isInFridge": false,
       "id": 2
     },
     {
@@ -25,8 +25,16 @@
       "type": "",
       "quantity": 0,
       "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
-      "isInFridge": true,
+      "isInFridge": false,
       "id": 3
+    },
+    {
+      "item_name": "sirloin steak",
+      "type": "Meat",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/4f1/4f10105d5c8178f25590ca6dfcd37fca.jpg",
+      "isInFridge": true,
+      "id": 4
     }
   ]
 }

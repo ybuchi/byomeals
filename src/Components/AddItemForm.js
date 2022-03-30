@@ -37,7 +37,7 @@ function AddItemForm({newItemForm, newItemFormState, addNewItem}) {
                             </FormGroup>
                         </Grid>
                         <Grid item xs={6} sm={2}>
-                            <FormControl sx={{ m: 1, minWidth: 80 }}>
+                            <FormControl required sx={{ m: 1, minWidth: 80 }}>
                                 <InputLabel id="ingredient-type">Type</InputLabel>
                                 <Select
                                     labelId="ingredient-type"
