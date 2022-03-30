@@ -9,39 +9,39 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import FilterFridge from "./FilterFridge";
+import { useOutletContext } from "react-router-dom";
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 
 
 const Recommended = () => {
-    const [selectOption, setSelectOption] = useState({})
-    // to grab recipes data API beginning
-    const [recRecipes, setRecRecipes] = useState([])
-    const data = async () => {
-        // const req = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=b0e9cd47e90747dc899daf160fb585ef&ingredients=${selectOption.item_name}&number=10`)
-        const req = await fetch('http://localhost:5001/recipes')
-        const res = await req.json()
-        return res
-    }
-    useEffect(() => {
-        data().then(eachData => setRecRecipes(eachData))
-    }, [selectOption])
-    // to grab recipes data API end
-
-    // to grab Fridge Data begining
-    const fridgeData = async () => {
-        const req = await fetch ('http://localhost:3001/fridge')
-        const res = req.json()
-        return res
-    }
-    const [fridgeStock, setFridgeStock] = useState([])
-    useEffect(()=> {
-        fridgeData().then(setFridgeStock)
-    }, [])
-    // to grab Fridge Data end
-
+    
+    const [fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState, selectOption, setSelectOption, recRecipes, setRecRecipes] = useOutletContext()
+    
+    
     return (
-        <>
-            <RecipeList recRecipe={recRecipes} fridgeStock={fridgeStock}/>
-        </>
+        <Box sx={{ flexGrow:1, mt:12}}>
+            <Grid container spacing={2}>
+            <Box sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                p: 1,
+                m: 1,
+                bgcolor: 'background.paper',
+                borderRadius: 1,
+            }}>
+
+            <FilterFridge fridgeData={fridgeData} setSelectOption={setSelectOption}/>
+            </Box>
+            <SearchBar />
+            </Grid>
+            <Grid>
+
+            <RecipeList recRecipe={recRecipes} fridgeData={fridgeData}/>
+            </Grid>
+
+        </Box>
+       
     )
     
 }

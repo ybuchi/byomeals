@@ -5,7 +5,7 @@ import { DataGrid } from '@mui/x-data-grid';
 
 
 
-const Ingredients = ({recipe, fridgeStock}) => {
+const Ingredients = ({recipe, fridgeData}) => {
     
     const columns = [
         {field:'id', headerName:'ID'},
@@ -18,7 +18,7 @@ const Ingredients = ({recipe, fridgeStock}) => {
         <div style={{ height: 250, width: '100%' }}>
           <DataGrid 
             columns={columns}
-            rows={fridgeStock}
+            rows={fridgeData}
           />
         </div>
       );

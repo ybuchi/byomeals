@@ -2,7 +2,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 
 
-const FilterFridge = ({fridgeStock, setSelectOption}) => {
+const FilterFridge = ({fridgeData, setSelectOption}) => {
     
     const filterOptions = createFilterOptions({
     matchFrom: 'start',
@@ -14,15 +14,17 @@ const FilterFridge = ({fridgeStock, setSelectOption}) => {
     }
 
     return (
+       
         <Autocomplete
-        id="filter-demo"
-        options={fridgeStock}
+        
+        options={fridgeData}
         getOptionLabel={(option) => option.item_name}
         filterOptions={filterOptions}
         sx={{ width: 300 }}
         renderInput={(params) => <TextField {...params} label="Select Item" />}
         onChange={handleOnChange}
         />
+       
     );
 }
     

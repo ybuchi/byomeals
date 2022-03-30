@@ -10,7 +10,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import CardContent from '@mui/material/CardContent';
 import { styled } from '@mui/material/styles';
 
-const ActionCard = ({recipe, fridgeStock}) => {
+const ActionCard = ({recipe, fridgeData}) => {
     const {title} = recipe
     const [expanded, setExpanded] = useState(false);
     const ExpandMore = styled((props) => {
@@ -49,7 +49,7 @@ const ActionCard = ({recipe, fridgeStock}) => {
                 <Collapse in={expanded} timeout="auto" collapsedSize="50px" unmountOnExit>
                     <CardContent>
                     <Typography paragraph>Instructions:</Typography>
-                    <Ingredients fridgeStock={fridgeStock} recipe={recipe}/>
+                    <Ingredients fridgeData={fridgeData} recipe={recipe}/>
                     </CardContent>
                 </Collapse>
         </>

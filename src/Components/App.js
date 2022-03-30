@@ -22,6 +22,7 @@ import MuiAppBar from '@mui/material/AppBar';
 import "./App.css"
 import Drawers from './Drawers'
 import { useMediaQuery } from "@material-ui/core";
+import FilterFridge from "./FilterFridge"
 
 
 const drawerWidth = 240;
@@ -69,6 +70,20 @@ function App() {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const windowSize = useMediaQuery(theme.breakpoints.down('md'))
+
+  const [selectOption, setSelectOption] = useState({})
+    // to grab recipes data API beginning
+    const [recRecipes, setRecRecipes] = useState([])
+    const data = async () => {
+        const req = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=b0e9cd47e90747dc899daf160fb585ef&ingredients=${selectOption.item_name}&number=10`)
+        // const req = await fetch('http://localhost:5001/recipes')
+        const res = await req.json()
+        return res
+    }
+    useEffect(() => {
+      data().then((eachData) => setRecRecipes(eachData))
+    }, [selectOption])
+    // to grab recipes data API end
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -145,12 +160,13 @@ function App() {
               Recommended Recipes
             </Button>
           </Box>
-
+          
+        
         </Toolbar>
         </Container>
         </AppBar>
         {/* {windowSize ? <Drawers handleDrawerClose={handleDrawerClose} open={open}/> : null} */}
-        <Outlet context={[fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState]}/>
+        <Outlet context={[fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState, selectOption, setSelectOption, recRecipes, setRecRecipes]}/>
       </Box>
       
   );
