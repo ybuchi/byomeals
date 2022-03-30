@@ -152,7 +152,8 @@ function App() {
         </AppBar>
         {/* {windowSize ? <Drawers handleDrawerClose={handleDrawerClose} open={open}/> : null} */}
       </Box>
-
+      
+      {/* MAKE SURE TO KEEP THIS OUTSIDE OF BOX COMPONENT */}
       <Outlet context={[fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState]}/>
       </>
       

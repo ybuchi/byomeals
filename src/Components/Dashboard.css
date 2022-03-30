@@ -2,7 +2,8 @@
     font-size: 50px;
     font-family: 'Skranji', cursive;
     color: #0E185F;
-    margin-top: 30px;
+    margin-top: 70px;
+    margin-bottom: 0px;
     text-align: center;
 }
 .subtitle {
@@ -11,4 +12,8 @@
     color: #2FA4FF;
     margin: 0px;
     text-align: center;
+}
+
+#item-container {
+    margin-top: 40px;
 }
