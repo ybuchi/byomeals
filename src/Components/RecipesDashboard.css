@@ -2,6 +2,9 @@
     font-size: 30px;
     text-align: center;
     font-family: "Skranji", cursive;
+    background-color: #E8FFC2;
+    border-radius: 5px;
+    color: black;
 }
 .recipe-summary-paper {
     padding: 10px 10px 10px 10px;

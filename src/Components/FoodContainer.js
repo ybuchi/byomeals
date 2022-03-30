@@ -29,7 +29,7 @@ function FoodContainer({foodInFridge, deleteItem, fridgeData, setFridgeData, inc
                 variant="standard"
                 onChange={handleSearchChange}
                 value={searchState} />
-            <Grid container spacing={1} id="item-container">
+            <Grid container spacing={1} id="ingredient-item-container">
                 {mappedFoodItems}
             </Grid>
         </>

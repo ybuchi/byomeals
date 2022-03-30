@@ -23,7 +23,7 @@ function Dashboard() {
 
             
 
-            <Grid container spacing={1} id="item-container">
+            <Grid container spacing={1} id="dashboards-container">
                 <FridgeDashboard fridgeData={ fridgeData } foodInFridge={foodInFridge} depletedFoods={depletedFoods}/>
                 <RecipesDashboard />
             </Grid>
