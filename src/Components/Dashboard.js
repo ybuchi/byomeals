@@ -16,9 +16,12 @@ function Dashboard() {
     const depletedFoods = fridgeData.filter(foodObject=>!foodObject.isInFridge);
 
     return(
-        <>
+        <>  
+    
             <h1 className="title">Welcome to BYOMeals</h1>
             <h3 className="subtitle">...where your home cooking dreams come to life</h3>
+
+            
 
             <Grid container spacing={1} id="item-container">
                 <FridgeDashboard fridgeData={ fridgeData } foodInFridge={foodInFridge} depletedFoods={depletedFoods}/>

@@ -104,6 +104,7 @@ function App() {
   },[setFridgeData])
   
   return (
+    <>
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar className="navbar" position="fixed" open={open}>
@@ -150,8 +151,10 @@ function App() {
         </Container>
         </AppBar>
         {/* {windowSize ? <Drawers handleDrawerClose={handleDrawerClose} open={open}/> : null} */}
-        <Outlet context={[fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState]}/>
       </Box>
+
+      <Outlet context={[fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState]}/>
+      </>
       
   );
 }
