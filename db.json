@@ -89,7 +89,7 @@
       "type": "Herbs and Spices",
       "quantity": 0,
       "image": "https://www.edamam.com/food-img/474/474d63763b9d8b9da98c5f43a114648c.jpg",
-      "isInFridge": true,
+      "isInFridge": false,
       "id": 11
     }
   ]

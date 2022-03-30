@@ -49,7 +49,7 @@ function App() {
           >
               <MenuIcon />
           </IconButton>
-          <Typography id="nav-logo" variant="h6" component="div">BYOMeal</Typography>
+          <Typography id="nav-logo" variant="h6" component="div">BYOMeals</Typography>
           <Typography variant="h6" component="div">
               <Link className="nav-link" to="/fridge" Fridge>Fridge</Link>
           </Typography>
