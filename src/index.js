@@ -9,6 +9,7 @@ import {
 import App from './Components/App';
 import Fridge from './Components/Fridge';
 import Recommended from './Components/Recommended';
+import Dashboard from './Components/Dashboard';
 
 
 render(
@@ -16,7 +17,7 @@ render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
-        
+       
         <Route path="fridge" element={<Fridge />} />
         <Route path="/recipes" element={<Recommended />} />
       </Route>

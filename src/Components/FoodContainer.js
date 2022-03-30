@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import FoodCard from "./FoodCard";
 import Grid from '@mui/material/Grid';
 import "./FoodContainer.css";
@@ -24,8 +24,8 @@ function FoodContainer({foodInFridge, deleteItem, fridgeData, setFridgeData, inc
             <TextField 
                 className="ingredient-search"
                 label="Search by Ingredient or Ingredient Type"
-                InputProps={{style:{fontSize : "40px", fontFamily : "'Caveat Brush', cursive", margin: "20px 30px"}}}
-                InputLabelProps={{style: {fontSize : "30px", fontFamily : "'PT Sans', sans-serif", margin:"20px 30px"}}} 
+                InputProps={{style:{fontSize : "25px", fontFamily : "'PT Sans', sans-serif", margin: "20px 30px", height : "50px"}}}
+                InputLabelProps={{style: {fontSize : "20px", fontFamily : "'PT Sans', sans-serif", margin:"20px 30px"}}} 
                 variant="standard"
                 onChange={handleSearchChange}
                 value={searchState} />

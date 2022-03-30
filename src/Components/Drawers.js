@@ -17,7 +17,7 @@ import { Outlet, Link as RouterLink } from "react-router-dom";
 
 
 const drawerWidth = 240;
-const pages = ['Home','Fridge', 'Recommended Recipes'];
+
 const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',

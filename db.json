@@ -7,10 +7,26 @@
     {
       "id": 1,
       "item_name": "bananas",
-      "quantity": 5,
-      "type": "fruit",
+      "quantity": 0,
+      "type": "Fruit",
       "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
       "isInFridge": true
+    },
+    {
+      "item_name": "sirloin steak",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/4f1/4f10105d5c8178f25590ca6dfcd37fca.jpg",
+      "isInFridge": false,
+      "id": 2
+    },
+    {
+      "item_name": "banana",
+      "type": "",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
+      "isInFridge": false,
+      "id": 3
     },
     {
       "item_name": "sirloin steak",
@@ -18,23 +34,63 @@
       "quantity": 0,
       "image": "https://www.edamam.com/food-img/4f1/4f10105d5c8178f25590ca6dfcd37fca.jpg",
       "isInFridge": true,
-      "id": 2
-    },
-    {
-      "item_name": "cumin",
-      "type": "Herbs and Spices",
-      "quantity": 0,
-      "image": "https://www.edamam.com/food-img/07e/07e2a4eb77ce46591033846504817d35.jpg",
-      "isInFridge": true,
-      "id": 3
-    },
-    {
-      "item_name": "cumin",
-      "type": "Herbs and Spices",
-      "quantity": 0,
-      "image": "https://www.edamam.com/food-img/07e/07e2a4eb77ce46591033846504817d35.jpg",
-      "isInFridge": true,
       "id": 4
+    },
+    {
+      "item_name": "salt",
+      "type": "Herbs and Spices",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg",
+      "isInFridge": true,
+      "id": 5
+    },
+    {
+      "item_name": "pepper",
+      "type": "Herbs and Spices",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/c6e/c6e5c3bd8d3bc15175d9766971a4d1b2.jpg",
+      "isInFridge": true,
+      "id": 6
+    },
+    {
+      "item_name": "chives",
+      "type": "Vegetable",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/f3f/f3f48643a924ba174b894e979cb48620.jpg",
+      "isInFridge": true,
+      "id": 7
+    },
+    {
+      "item_name": "salmon",
+      "type": "Fish",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/9a0/9a0f38422e9f21dcedbc2dca0d8209ac.jpg",
+      "isInFridge": true,
+      "id": 8
+    },
+    {
+      "item_name": "butter",
+      "type": "Dairy",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg",
+      "isInFridge": false,
+      "id": 9
+    },
+    {
+      "item_name": "olives",
+      "type": "Vegetable",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/822/8221f2141e8dafd469414b20777735ca.jpg",
+      "isInFridge": false,
+      "id": 10
+    },
+    {
+      "item_name": "paprika",
+      "type": "Herbs and Spices",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/474/474d63763b9d8b9da98c5f43a114648c.jpg",
+      "isInFridge": false,
+      "id": 11
     }
   ]
 }
