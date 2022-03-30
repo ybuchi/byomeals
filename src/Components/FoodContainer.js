@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import FoodCard from "./FoodCard";
 import Grid from '@mui/material/Grid';
 import "./FoodContainer.css";

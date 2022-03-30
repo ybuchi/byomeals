@@ -1,5 +1,7 @@
 import React from "react";
 import { useOutletContext } from "react-router-dom";
+import FridgeDashboard from "./FridgeDashboard";
+import "./Dashboard.css"
 
 
 function Dashboard() {
@@ -11,11 +13,11 @@ function Dashboard() {
 
     return(
         <>
-            <h1>Welcome to BYOMeals</h1>
-            <h3>Where your home cooking dreams come to life</h3>
-            <h2>Fridge Summary</h2>
-            <p><strong>Number of Items in Fridge: </strong>{foodInFridge.length}</p>
-            <button>Go to Fridge</button>
+            <h1 className="title">Welcome to BYOMeals</h1>
+            <h3 className="subtitle">...where your home cooking dreams come to life</h3>
+
+            <FridgeDashboard fridgeData={ fridgeData } foodInFridge={foodInFridge}/>
+
             <h2>Recipe Summary</h2>
             <p><strong>Number of Recipes Cooked: </strong></p>
             <p><strong>Favorite Recipes: </strong></p>

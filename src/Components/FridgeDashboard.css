@@ -1,0 +1,9 @@
+.fridge-title-summary{
+    font-size: 30px;
+    font-family: "PT Sans", sans-serif;
+    text-align: center;
+}
+.fridge-summary-paper {
+    padding: 0px 10px 10px 10px;
+    margin: 10px;
+}
