@@ -10,8 +10,8 @@ const Ingredients = ({recipe, fridgeData}) => {
     const columns = [
         {field:'id', headerName:'ID'},
         {field:'item_name', headerName:"Name"},
-        {field:'quantity', headerName:"Quantity"},
-        {field:'isInFridge', headerName:'In Fridge?'}
+        {field:'quantity', headerName:"Quantity", type: 'number', editable: true},
+        {field:'isInFridge', headerName:'In Fridge?', editable: true}
     ]
 
     return (
@@ -19,6 +19,7 @@ const Ingredients = ({recipe, fridgeData}) => {
           <DataGrid 
             columns={columns}
             rows={fridgeData}
+            experimentalFeatures={{ newEditingApi: true }}
           />
         </div>
       );

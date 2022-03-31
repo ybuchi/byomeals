@@ -5,8 +5,7 @@ const ContentCard = ({recipe}) => {
     const {id} = recipe
     const [nutFact, setNutFact] = useState([])
     const summaryData = async () => {
-        // const req = await fetch('http://localhost:5001/summary')
-        const req = await fetch(`https://api.spoonacular.com/recipes/4632/information?apiKey=b0e9cd47e90747dc899daf160fb585ef`)
+        const req = await fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=b0e9cd47e90747dc899daf160fb585ef`)
         const res = await req.json()
         return res
     }

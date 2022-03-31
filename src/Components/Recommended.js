@@ -15,13 +15,13 @@ import Grid from '@mui/material/Grid';
 
 
 const Recommended = () => {
-    
+    const [itemSearch, setItemSearch] = useState("")
     const [fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState, selectOption, setSelectOption, recRecipes, setRecRecipes] = useOutletContext()
-    
+    const filtRecipe = recRecipes.filter(recipe => recipe.title.toLowerCase().includes(itemSearch))
     
     return (
         <Box sx={{ flexGrow:1, mt:12}}>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} justifyContent="center" alignItems='center'>
             <Box sx={{
                 display: 'flex',
                 flexDirection: 'row',
@@ -31,13 +31,14 @@ const Recommended = () => {
                 borderRadius: 1,
             }}>
 
-            <FilterFridge fridgeData={fridgeData} setSelectOption={setSelectOption}/>
+            <FilterFridge fridgeData={fridgeData} selectOption={selectOption} setSelectOption={setSelectOption}/>
+            <SearchBar itemSearch={itemSearch} setItemSearch={setItemSearch}/>
             </Box>
-            <SearchBar />
+            
             </Grid>
             <Grid>
 
-            <RecipeList recRecipe={recRecipes} fridgeData={fridgeData}/>
+            <RecipeList filtRecipe={filtRecipe} recRecipe={recRecipes} fridgeData={fridgeData}/>
             </Grid>
 
         </Box>
