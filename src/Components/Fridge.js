@@ -29,13 +29,17 @@ function Fridge(){
     })
 
     function addNewItem(newItem){
+        //Define variables to keep track of item matches in loop
+            let totalCount = fridgeData.length;
+            let checkCount = 0;
 
         //If the new item name matches one that is already in the fridge, then prompt the user as to whether they want to add this item again.
         for (const foodObject of fridgeData){
             
+            
             if(foodObject.item_name.toLowerCase().trim().includes(newItem.item_name.toLowerCase().trim()) && foodObject.isInFridge){
                 console.log("Item matches and is in Fridge!")
-                let confirmDuplicate = window.confirm(`It seems you have a similar item in your fridge: ${foodObject.item_name}. Are you sure you want to add ${newItem.item_name} to your fridge?`)
+                let confirmDuplicate = window.confirm(`It seems you've already used: ${foodObject.item_name}. Are you sure you want to add ${newItem.item_name} to your fridge?`)
                 if(confirmDuplicate){
                     fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=52ce18e1&app_key=94901fd21fbdbc510e92bd7736f43784&ingr=${newItem.item_name.toLowerCase().trim()}&nutrition-type=cooking`)
                     .then(res => res.json())
@@ -57,28 +61,33 @@ function Fridge(){
                 }
                 break;
             }else if(foodObject.item_name.toLowerCase().trim().includes(newItem.item_name.toLowerCase().trim()) && !foodObject.isInFridge){
-                console.log("Item matches but isn't in fridge!")
-                const configObj = {
-                    method : "PATCH",
+                let confirmRecycleIngredient = window.confirm(`It seems you've already used: ${foodObject.item_name}. Do you want to pull ${newItem.item_name} back into your fridge?`)
+                if(confirmRecycleIngredient){
+                    
+                    const configObject = {
+                    method: "PATCH",
                     headers : {
                         'Content-Type' : 'application/json',
                         Accept : 'application/json'
                     },
-                    body : JSON.stringify({...foodObject, isInFridge : true})
-                }
-
-                fetch(`http://localhost:3004/fridge/${foodObject.id}`, configObj)
-                .then(res => res.json())
-                .then(foodNowInFridge => setFridgeData((fridgeData)=>fridgeData.map(((foodObject)=>{
-                    if(foodObject.id===foodNowInFridge.id){
-                        return foodNowInFridge
-                    }else{
-                        return foodObject;
+                    body: JSON.stringify({...foodObject, isInFridge : true})
                     }
-                }))))
+
+                    fetch(`http://localhost:3004/fridge/${foodObject.id}`, configObject)
+                    .then(res => res.json())
+                    .then(recycledFoodItem => setFridgeData(fridgeData.map((ingredientObject)=>{
+                        if(ingredientObject.id === recycledFoodItem.id){
+                           return recycledFoodItem;
+                        }else{
+                            return ingredientObject;
+                        }
+                    })))
+                }
+                break;
             }else{
-                console.log("Item matches asdlfkj!")
-                fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=52ce18e1&app_key=94901fd21fbdbc510e92bd7736f43784&ingr=${newItem.item_name.toLowerCase().trim()}&nutrition-type=cooking`)
+                checkCount += 1;
+                if(checkCount === totalCount){
+                    fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=52ce18e1&app_key=94901fd21fbdbc510e92bd7736f43784&ingr=${newItem.item_name.toLowerCase().trim()}&nutrition-type=cooking`)
                     .then(res => res.json())
                     .then(itemAPIData => {
                         const configObject = {
@@ -94,8 +103,12 @@ function Fridge(){
                         .then(res => res.json())
                         .then(newFoodItem => setFridgeData([...fridgeData, newFoodItem]))
                     })
+                }else{
+                    continue;
+                }
             }
-            break;
+
+
         }
 
         

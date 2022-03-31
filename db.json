@@ -99,6 +99,22 @@
       "image": "https://www.edamam.com/food-img/3e4/3e47317a3dd54dc911b9c44122285df1.jpg",
       "isInFridge": true,
       "id": 15
+    },
+    {
+      "item_name": "salt",
+      "type": "Herbs and Spices",
+      "quantity": "1",
+      "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg",
+      "isInFridge": true,
+      "id": 16
+    },
+    {
+      "item_name": "baguette",
+      "type": "Grains, Nuts and Baking",
+      "quantity": "1",
+      "image": "https://www.edamam.com/food-img/470/47053c77e167539c64fef3f2a3249bb2.jpg",
+      "isInFridge": true,
+      "id": 17
     }
   ],
   "chicken": [
