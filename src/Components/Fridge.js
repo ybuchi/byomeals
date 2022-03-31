@@ -100,8 +100,14 @@ function Fridge(){
         
     }
 
+    //A function that handles the search bar on the Fridge Page to search for ingredients or ingredient types
     function handleSearchChange (e) {
         setSearchState(e.target.value);
+    }
+
+    //A function that handles the Ingredient Type filter buttons on the Fride Page
+    function handleIngredientTypeFilter(ingredientType){
+        
     }
 
     function deleteItem(foodItemToDelete){
@@ -158,7 +164,9 @@ function Fridge(){
                          newItemFormState={newItemFormState} 
                          addNewItem={addNewItem}/>
             <FoodContainer searchState={searchState} 
+                           setSearchState={setSearchState}
                            handleSearchChange={handleSearchChange} 
+                           handleIngredientTypeFilter={handleIngredientTypeFilter}
                            foodInFridge ={foodInFridge} 
                            deleteItem={deleteItem} 
                            setFridgeData={setFridgeData} 

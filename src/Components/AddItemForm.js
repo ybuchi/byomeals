@@ -10,7 +10,6 @@ import FormControl from '@mui/material/FormControl';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
-
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
@@ -35,7 +34,7 @@ function AddItemForm({newItemForm, newItemFormState, addNewItem}) {
     }
     return (
         <>
-        <Accordion expanded={expanded === 'panel1'} onChange={handleAccordionExpand('panel1')}>
+        <Accordion sx={{marginLeft : "40px", marginRight: "40px"}}expanded={expanded === 'panel1'} onChange={handleAccordionExpand('panel1')}>
             <AccordionSummary sx={{backgroundColor: "#C9CCD5"}}expandIcon={<ExpandMoreIcon sx={{color: "black"}} />} aria-controls="panel1bh-content" id="panel1bh-header">
             <Typography sx={{ width: '100%', flexShrink: 0, fontFamily : "'Caveat', cursive", fontWeight: "bold", fontSize: "30px", textAlign: "center",  }}>
                 Add Items to Fridge
