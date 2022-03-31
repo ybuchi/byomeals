@@ -14,22 +14,6 @@
     },
     {
       "item_name": "sirloin steak",
-      "type": "",
-      "quantity": 0,
-      "image": "https://www.edamam.com/food-img/4f1/4f10105d5c8178f25590ca6dfcd37fca.jpg",
-      "isInFridge": false,
-      "id": 2
-    },
-    {
-      "item_name": "banana",
-      "type": "",
-      "quantity": 0,
-      "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
-      "isInFridge": false,
-      "id": 3
-    },
-    {
-      "item_name": "sirloin steak",
       "type": "Meat",
       "quantity": 0,
       "image": "https://www.edamam.com/food-img/4f1/4f10105d5c8178f25590ca6dfcd37fca.jpg",
@@ -73,16 +57,8 @@
       "type": "Dairy",
       "quantity": 0,
       "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg",
-      "isInFridge": false,
+      "isInFridge": true,
       "id": 9
-    },
-    {
-      "item_name": "olives",
-      "type": "Vegetable",
-      "quantity": 0,
-      "image": "https://www.edamam.com/food-img/822/8221f2141e8dafd469414b20777735ca.jpg",
-      "isInFridge": false,
-      "id": 10
     },
     {
       "item_name": "paprika",

@@ -5,9 +5,7 @@ import "./FoodContainer.css";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-
-
-
+import DepletedIngredients from "./DepletedIngredients";
 
 function FoodContainer({foodInFridge, deleteItem, fridgeData, setFridgeData, incrementQuantity, decrementQuantity, searchState, setSearchState, handleSearchChange, handleIngredientTypeFilter}) {
     const [ingredientTypeFilterIsClicked, setIngredientTypeFilterIsClicked] = useState(false)
@@ -60,6 +58,9 @@ function FoodContainer({foodInFridge, deleteItem, fridgeData, setFridgeData, inc
             <Grid container spacing={1} id="ingredient-item-container">
                 {mappedFoodItems}
             </Grid>
+
+            {/* //Depleted Items here */}
+            <DepletedIngredients fridgeData = {fridgeData} setFridgeData = {setFridgeData}/>
         </>
     )
 }

@@ -1,7 +1,7 @@
 import React from "react";
+import "./FoodCard.css";
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
-import "./FoodCard.css";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import IconButton from '@mui/material/IconButton';
