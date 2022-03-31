@@ -5,35 +5,20 @@ import {useState, useEffect} from 'react'
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import "./App.css"
-import Drawers from './Drawers'
 import { useMediaQuery } from "@material-ui/core";
-import FilterFridge from "./FilterFridge"
 import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 
 
-
-
-
-
-const pages = ['Home','Fridge', 'Recommended Recipes'];
 function App() {
   
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -132,11 +117,15 @@ function App() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {pages.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <ListItem button component={RouterLink} to="/">
+                <ListItemText>Home</ListItemText>
+              </ListItem>
+              <ListItem button component={RouterLink} to="fridge">
+                <ListItemText>Fridge</ListItemText>
+              </ListItem>
+              <ListItem button component={RouterLink} to="/recipes">
+                <ListItemText>Recommended Recipes</ListItemText>
+            </ListItem>
             </Menu>
           </Box>
           :
@@ -166,12 +155,9 @@ function App() {
               Recommended Recipes
             </Button>
           </Box>
-          
-        
         </Toolbar>
         </Container>
         </AppBar>
-        {/* {windowSize ? <Drawers handleDrawerClose={handleDrawerClose} open={open}/> : null} */}
         <Outlet context={[fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState, selectOption, setSelectOption, recRecipes, setRecRecipes]}/>
       </Box>
       
