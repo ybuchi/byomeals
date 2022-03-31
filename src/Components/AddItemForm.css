@@ -9,15 +9,10 @@
     margin: 0px 20px 20px 20px;
     font-size: 50px;
 }
-.card-image {
-    border-radius: 100%;
-    border: solid black 2px;
-    width: 3em;
-}
 .form-container {
     color: white;
-    background-color: #4D77FF;
-    padding: 20px 30px;
+    background-color: white;
+    padding: 40px 30px;
 }
 .control-box {
     border: black 2px solid;

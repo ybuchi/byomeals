@@ -1,7 +1,11 @@
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
 import "./FridgeDashboard.css"
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+
 
 function FridgeDashboard ({fridgeData, foodInFridge, depletedFoods}){
     return(
@@ -23,8 +27,9 @@ function FridgeDashboard ({fridgeData, foodInFridge, depletedFoods}){
                     </div>
                     </Grid>
                 </Grid>
-                
-                <button>Go to Fridge</button>
+                <Box textAlign="center">
+                    <Button id="fridge-button" component={RouterLink} to="/fridge">Go to Fridge</Button>
+                </Box>
             </Paper>
         </Grid>
     )

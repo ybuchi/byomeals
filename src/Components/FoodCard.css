@@ -2,40 +2,65 @@
     font-size: 30px;
     font-family: 'PT Sans', sans-serif;
 }
+.card-image {
+    border-radius: 100%;
+    border: solid black 2px;
+    width: 4em;
+}
 .food-card {
     font-family: "PT Sans", sans-serif;
     text-align: center;
+    padding: 10px;
 }
 .vegetable{
     background-color: #B3E283;
+    padding: 5px;
+    border-radius: 5px;
 }
 .olive-oils {
     background-color: #E8E46E;
+    padding: 5px;
+    border-radius: 5px;
 }
 .fish {
     background-color: #D6ECFA;
+    padding: 5px;
+    border-radius: 5px;
 }
 .fruit {
     background-color: #C060A1;
     color: white;
+    padding: 5px;
+    border-radius: 5px;
 }
 .grains-nuts-baking{
     background-color: #F9D5BB;
+    padding: 5px;
+    border-radius: 5px;
 }
 .herbs-spices{
     background-color: #810000;
     color: white;
+    padding: 5px;
+    border-radius: 5px;
 }
 .meat{
-    background-color: #810000;
-    color: white;
+    background-color: pink;
+    padding: 5px;
+    border-radius: 5px;
 }
 .dairy{
     background-color: #E8E2DB;
+    padding: 5px;
+    border-radius: 5px;
 }
 .poultry{
     background-color: #99B19C;
+    padding: 5px;
+    border-radius: 5px;
 }
 .other{
     background-color: #FDF6F0;
+    padding: 5px;
+    border-radius: 5px;
 }

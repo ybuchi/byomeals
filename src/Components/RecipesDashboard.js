@@ -2,6 +2,10 @@ import React from "react";
 import "./RecipesDashboard.css"
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+
+
 
 function RecipesDashboard ({fridgeData, foodInFridge}){
     return(
@@ -10,7 +14,10 @@ function RecipesDashboard ({fridgeData, foodInFridge}){
                 <h2 id="recipe-title-summary">Recipe Summary</h2>
                 <p><strong>Number of Recipes Cooked: </strong></p>
                 <p><strong>Favorite Recipes: </strong></p>
-                <button>Go to Recipe Finder</button>
+                <Box textAlign="center">
+                    <Button id="recipes-button">Go to Recipe Finder</Button>
+                </Box>
+                
             </Paper>
         </Grid>
     )
