@@ -2,9 +2,13 @@
     font-size: 30px;
     text-align: center;
     font-family: "Skranji", cursive;
+    margin-top: 20px;
+    background-color: #00FFDD;
+    border-radius: 5px;
+    color: black;
 }
 .fridge-summary-paper {
-    padding: 0px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
     font-family: "PT Sans", sans-serif;
 }
 .numberOf-itemsInFridge{
@@ -12,4 +16,7 @@
 }
 .number-label {
     font-weight: bold;
+}
+#fridge-button {
+    font-family: 'PT Sans', sans-serif;
 }

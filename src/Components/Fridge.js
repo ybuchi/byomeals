@@ -8,6 +8,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import { ClassNames } from "@emotion/react";
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import "./Fridge.css"
 // import "./Fridge.css"
 //My API key FDA
 // YjNQFF8radU2ks6rvpawGQmyYWLbVmbLU9C5W2c0
@@ -100,8 +101,14 @@ function Fridge(){
         
     }
 
+    //A function that handles the search bar on the Fridge Page to search for ingredients or ingredient types
     function handleSearchChange (e) {
         setSearchState(e.target.value);
+    }
+
+    //A function that handles the Ingredient Type filter buttons on the Fride Page
+    function handleIngredientTypeFilter(ingredientType){
+        
     }
 
     function deleteItem(foodItemToDelete){
@@ -154,12 +161,14 @@ function Fridge(){
         <Box sx={{ flexGrow:1, mt:8}}>
 
         <Grid>
-
+            <h1 className="main-title">Fridge</h1>
             <AddItemForm newItemForm={newItemForm} 
                          newItemFormState={newItemFormState} 
                          addNewItem={addNewItem}/>
             <FoodContainer searchState={searchState} 
+                           setSearchState={setSearchState}
                            handleSearchChange={handleSearchChange} 
+                           handleIngredientTypeFilter={handleIngredientTypeFilter}
                            foodInFridge ={foodInFridge} 
                            deleteItem={deleteItem} 
                            setFridgeData={setFridgeData} 

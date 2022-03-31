@@ -113,21 +113,19 @@ function App() {
 
     //The state for the search bar on the Fridge page to search for ingredients in the fridge
     const [searchState, setSearchState] = useState("") 
+
+    //Fetching ingredients in fridge from JSON DB and saving them to state
     useEffect(()=>{
       //We're setting the fridgeData state to contain all items currently in the user's fridge in JSON DB
       fetch('http://localhost:3004/fridge')
       .then(res => res.json())
       .then(fridgeData => setFridgeData(fridgeData));
-      
-      // //Example FETCH CALL WITH EDAMAM
-      // fetch('https://api.edamam.com/api/food-database/v2/parser?app_id=52ce18e1&app_key=94901fd21fbdbc510e92bd7736f43784&ingr=banana&nutrition-type=cooking')
-      // .then(res => res.json())
-      // .then(data => console.log(data));
   },[setFridgeData])
 
   
   return (
-    <Box sx={{ display: 'flex' }}>
+    <>
+    <Box sx={{ display: 'flex', backgroundColor: '#0E185F' }}>
       <CssBaseline />
       <AppBar className="navbar" position="fixed" open={open}>
         <Container maxWidth="xl">
@@ -144,24 +142,24 @@ function App() {
           </IconButton>
           ) : null
           }
-          <Typography id="nav-logo" variant="h6" component="div">BYOMeal</Typography>
+          <Typography id="nav-logo" variant="h6" component="div"><span id="nav-logo-span">BYO</span>Meals</Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Button 
-            sx={{ my: 2, color: 'white', display: 'block' }}
+            sx={{ my: 2, mx: 3, fontFamily: "'PT Sans', sans-serif", fontWeight : "bold", color: 'white', display: 'block' }}
             component={RouterLink}
             to="/"
             >
               Home
             </Button>
             <Button 
-            sx={{ my: 2, color: 'white', display: 'block' }}
+            sx={{ my: 2, mx:3, fontFamily: "'PT Sans', sans-serif", fontWeight : "bold", color: 'white', display: 'block' }}
             component={RouterLink}
             to="fridge"
             >
               Fridge
             </Button>
-            <Button 
-            sx={{ my: 2, color: 'white', display: 'block' }}
+            <Button  
+            sx={{ my: 2, mx: 3, fontFamily: "'PT Sans', sans-serif", fontWeight : "bold", color: 'white', display: 'block' }}
             component={RouterLink}
             to="/recipes"
             >
@@ -174,8 +172,11 @@ function App() {
         </Container>
         </AppBar>
         {/* {windowSize ? <Drawers handleDrawerClose={handleDrawerClose} open={open}/> : null} */}
-        <Outlet context={[fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState, selectOption, setSelectOption, recRecipes, setRecRecipes, open]}/>
       </Box>
+      
+      {/* MAKE SURE TO KEEP THIS OUTSIDE OF BOX COMPONENT */}
+       <Outlet context={[fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState, selectOption, setSelectOption, recRecipes, setRecRecipes, open]}/>
+      </>
       
   );
 }
