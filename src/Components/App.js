@@ -18,58 +18,36 @@ import ListItemText from '@mui/material/ListItemText';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
-import MuiAppBar from '@mui/material/AppBar';
+import AppBar from '@mui/material/AppBar';
 import "./App.css"
 import Drawers from './Drawers'
 import { useMediaQuery } from "@material-ui/core";
 import FilterFridge from "./FilterFridge"
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import Avatar from '@mui/material/Avatar';
+import Menu from '@mui/material/Menu';
 
 
-const drawerWidth = 240;
 
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
-  ({ theme, open }) => ({
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: `-${drawerWidth}px`,
-    ...(open && {
-      transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-      marginLeft: 0,
-    }),
-  }),
-);
-
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
-  transition: theme.transitions.create(['margin', 'width'], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: `${drawerWidth}px`,
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
-}));
 
 
 
 const pages = ['Home','Fridge', 'Recommended Recipes'];
 function App() {
+  
+  const [anchorElUser, setAnchorElUser] = useState(null);
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
   const theme = useTheme();
-  const [open, setOpen] = useState(false);
-  const windowSize = useMediaQuery(theme.breakpoints.down('sm'))
+  
+  const windowSize = useMediaQuery(theme.breakpoints.down('md'))
+  
 
   const [selectOption, setSelectOption] = useState({})
     // to grab recipes data API beginning
@@ -92,13 +70,6 @@ function App() {
     }, [selectOption])
     // to grab recipes data API end
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
   //State for the entire fridge data
   const [fridgeData, setFridgeData] = useState([])
 
@@ -129,20 +100,47 @@ function App() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar className="navbar" position="fixed" open={open}>
+      <AppBar className="navbar" position="fixed" >
         <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {windowSize ? (
-          <IconButton
+          {windowSize 
+          ? 
+        <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Open settings">
+            <IconButton
               color="inherit"
               aria-label="open drawer"
-              onClick={handleDrawerOpen}
+              onClick={handleOpenUserMenu}
               edge="start"
-              sx={{ mr: 2, ...(open && { display: 'none' }) }}
           >
               <MenuIcon />
-          </IconButton>
-          ) : null
+          </IconButton> 
+            </Tooltip>
+            <Menu
+              sx={{ mt: '45px' }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {pages.map((setting) => (
+                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">{setting}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+          :
+          null
           }
           <Typography id="nav-logo" variant="h6" component="div">BYOMeal</Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -174,7 +172,7 @@ function App() {
         </Container>
         </AppBar>
         {/* {windowSize ? <Drawers handleDrawerClose={handleDrawerClose} open={open}/> : null} */}
-        <Outlet context={[fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState, selectOption, setSelectOption, recRecipes, setRecRecipes, open]}/>
+        <Outlet context={[fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState, selectOption, setSelectOption, recRecipes, setRecRecipes]}/>
       </Box>
       
   );
