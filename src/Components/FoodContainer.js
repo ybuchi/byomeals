@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import DepletedIngredients from "./DepletedIngredients";
 
-function FoodContainer({foodInFridge, deleteItem, fridgeData, setFridgeData, incrementQuantity, decrementQuantity, searchState, setSearchState, handleSearchChange, handleIngredientTypeFilter}) {
+function FoodContainer({foodInFridge, deleteItem, fridgeData, setFridgeData, incrementQuantity, decrementQuantity, searchState, setSearchState, handleSearchChange}) {
     const [ingredientTypeFilterIsClicked, setIngredientTypeFilterIsClicked] = useState(false)
     let mappedFoodItems = foodInFridge.map((foodItem) => <FoodCard 
                                                             key={foodItem.id} 
@@ -43,7 +43,7 @@ function FoodContainer({foodInFridge, deleteItem, fridgeData, setFridgeData, inc
                 value={searchState} />
 
             <Box sx={{fontFamily: "'PT Sans', sans-serif", marginBottom : "10px", padding : "10px 20px"}}>   
-                <Button sx={{backgroundColor: "#E8E46E", color: "black"}} onClick={handleTypeSort}>Fats + Oils</Button>
+                <Button sx={{backgroundColor: "#E8E46E", color: "black"}} onClick={handleTypeSort}>Fats and Oils</Button>
                 <Button sx={{backgroundColor: "#D6ECFA", color: "black"}} onClick={handleTypeSort}>Fish</Button>
                 <Button sx={{backgroundColor: "#C060A1", color: "white"}} onClick={handleTypeSort}>Fruit</Button>
                 <Button sx={{backgroundColor: "#F9D5BB", color: "black"}} onClick={handleTypeSort}>Grains, Nuts and Baking</Button>
