@@ -45,16 +45,16 @@ function FoodContainer({foodInFridge, deleteItem, fridgeData, setFridgeData, inc
                 value={searchState} />
 
             <Box sx={{fontFamily: "'PT Sans', sans-serif", marginBottom : "10px", padding : "10px 20px"}}>   
-                <Button className="filter-button" onClick={handleTypeSort}>Fats + Oils</Button>
-                <Button className="filter-button" onClick={handleTypeSort}>Fish</Button>
-                <Button className="filter-button" onClick={handleTypeSort}>Fruit</Button>
-                <Button className="filter-button" onClick={handleTypeSort}>Grains, Nuts and Baking</Button>
-                <Button className="filter-button" onClick={handleTypeSort}>Herbs and Spices</Button>
-                <Button className="filter-button" onClick={handleTypeSort}>Meat</Button>
-                <Button className="filter-button" onClick={handleTypeSort}>Dairy</Button>
-                <Button className="filter-button" onClick={handleTypeSort}>Poultry</Button>
-                <Button className="filter-button" onClick={handleTypeSort}>Vegetable</Button>
-                <Button className="filter-button" onClick={handleTypeSort}>Other</Button>
+                <Button sx={{backgroundColor: "#E8E46E", color: "black"}} onClick={handleTypeSort}>Fats + Oils</Button>
+                <Button sx={{backgroundColor: "#D6ECFA", color: "black"}} onClick={handleTypeSort}>Fish</Button>
+                <Button sx={{backgroundColor: "#C060A1", color: "white"}} onClick={handleTypeSort}>Fruit</Button>
+                <Button sx={{backgroundColor: "#F9D5BB", color: "black"}} onClick={handleTypeSort}>Grains, Nuts and Baking</Button>
+                <Button sx={{backgroundColor: "#810000", color: "white"}} onClick={handleTypeSort}>Herbs and Spices</Button>
+                <Button sx={{backgroundColor: "pink", color: "black"}} onClick={handleTypeSort}>Meat</Button>
+                <Button sx={{backgroundColor: "#E8E2DB", color: "black"}} onClick={handleTypeSort}>Dairy</Button>
+                <Button sx={{backgroundColor: "#99B19C", color: "black"}} onClick={handleTypeSort}>Poultry</Button>
+                <Button sx={{backgroundColor: "#B3E283", color: "black"}} onClick={handleTypeSort}>Vegetable</Button>
+                <Button sx={{backgroundColor: "#FDF6F0", color: "black"}} onClick={handleTypeSort}>Other</Button>
             </Box> 
 
             <Grid container spacing={1} id="ingredient-item-container">
