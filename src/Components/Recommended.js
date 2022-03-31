@@ -19,12 +19,35 @@ const Recommended = () => {
     const [fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState, selectOption, setSelectOption, recRecipes, setRecRecipes] = useOutletContext()
     const filtRecipe = recRecipes.filter(recipe => recipe.title.toLowerCase().includes(itemSearch))
     const [selectRecipe, setSelectRecipe] = useState([])
+    
 
     function handleSelected (recipe) {
-        console.log(recipe)
         setSelectRecipe(selectRecipe.push(recipe))
     }
     
+    function updatedCookCount(recipe) {
+        
+                fetch (`http://localhost:3004/chicken/${recipe.id}`, {
+                    method:"PATCH",
+                    headers: {
+                        "Content-Type":"application/json"
+                    },
+                    body: JSON.stringify({...recipe, cookCount : recipe.cookCount + 1})
+                })
+                .then (req => req.json())
+                .then (updatedRecipe => {
+                    setRecRecipes((recRecipes)=>recRecipes.map((recipe)=>{
+                        if(recipe.id === updatedRecipe.id){
+                            return updatedRecipe
+                        }else{
+                            return recipe
+                        }
+                    }))
+                })
+            
+        
+    }
+   
     
     return (
         <Box sx={{ flexGrow:1, mt:12}}>
@@ -45,7 +68,7 @@ const Recommended = () => {
             </Grid>
             <Grid>
 
-            <RecipeList selectRecipe={selectRecipe} setSelectRecipe={setSelectRecipe} handleSelected={handleSelected} filtRecipe={filtRecipe} recRecipe={recRecipes} fridgeData={fridgeData}/>
+            <RecipeList updatedCookCount={updatedCookCount} selectRecipe={selectRecipe} setSelectRecipe={setSelectRecipe} handleSelected={handleSelected} filtRecipe={filtRecipe} recRecipe={recRecipes} fridgeData={fridgeData}/>
             </Grid>
 
         </Box>

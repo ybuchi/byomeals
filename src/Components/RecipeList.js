@@ -26,7 +26,7 @@ const useStyles = makeStyles({
         paddingRight: "50px"
     }
 })
-const RecipeList = ({recRecipe, fridgeData, filtRecipe, handleSelected, setSelectRecipe, selectRecipe}) => {
+const RecipeList = ({recRecipe, fridgeData, filtRecipe, handleSelected, setSelectRecipe, selectRecipe, updatedCookCount}) => {
     const classes = useStyles()
     const ExpandMore = styled((props) => {
         const { expand, ...other } = props;
@@ -67,7 +67,7 @@ const RecipeList = ({recRecipe, fridgeData, filtRecipe, handleSelected, setSelec
                     alt={title}
                 />
                 <CardContent>
-                    <ContentCard recipe={recipe}/>
+                    <ContentCard recipe={recipe} updatedCookCount={updatedCookCount}/>
                     <Typography variant="subtitle2" color="text.secondary">
                     Fridge Ingredients ({usedIngredientCount}): 
                     </Typography >
