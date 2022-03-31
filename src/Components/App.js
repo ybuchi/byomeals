@@ -138,7 +138,7 @@ function App() {
             >
               Fridge
             </Button>
-            <Button 
+            <Button  
             sx={{ my: 2, mx: 3, fontFamily: "'PT Sans', sans-serif", fontWeight : "bold", color: 'white', display: 'block' }}
             component={RouterLink}
             to="/recipes"

@@ -20,7 +20,6 @@ function FoodContainer({foodInFridge, deleteItem, fridgeData, setFridgeData, inc
        
     return(
         <>
-            <h1 className="main-title">Fridge</h1>
             <TextField 
                 className="ingredient-search"
                 label="Search by Ingredient or Ingredient Type"

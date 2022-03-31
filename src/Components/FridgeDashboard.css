@@ -17,3 +17,7 @@
 .number-label {
     font-weight: bold;
 }
+#fridge-button {
+    font-family: 'PT Sans', sans-serif;
+    margin: auto;
+}

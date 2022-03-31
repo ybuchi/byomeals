@@ -91,6 +91,14 @@
       "image": "https://www.edamam.com/food-img/474/474d63763b9d8b9da98c5f43a114648c.jpg",
       "isInFridge": false,
       "id": 11
+    },
+    {
+      "item_name": "eggs",
+      "type": "Other",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/a7e/a7ec7c337cb47c6550b3b118e357f077.jpg",
+      "isInFridge": true,
+      "id": 12
     }
   ]
 }
