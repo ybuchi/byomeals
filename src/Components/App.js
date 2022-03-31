@@ -22,6 +22,7 @@ import MuiAppBar from '@mui/material/AppBar';
 import "./App.css"
 import Drawers from './Drawers'
 import { useMediaQuery } from "@material-ui/core";
+import FilterFridge from "./FilterFridge"
 
 
 const drawerWidth = 240;
@@ -68,7 +69,28 @@ const pages = ['Home','Fridge', 'Recommended Recipes'];
 function App() {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
-  const windowSize = useMediaQuery(theme.breakpoints.down('md'))
+  const windowSize = useMediaQuery(theme.breakpoints.down('sm'))
+
+  const [selectOption, setSelectOption] = useState({})
+    // to grab recipes data API beginning
+    const [recRecipes, setRecRecipes] = useState([])
+    const data = async () => {
+      // array.join(',+')
+        // const req = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=b0e9cd47e90747dc899daf160fb585ef&ingredients=${selectOption[0]},${selectOption.join(',+')}&number=10`)
+        const req = await fetch('http://localhost:3004/chicken')
+        const res = await req.json()
+        return res
+    }
+    useEffect(() => {
+      fetch('http://localhost:3004/chicken')
+      .then (req => req.json())
+      .then (setRecRecipes)
+    }, [])
+
+    useEffect(() => {
+      data().then((eachData) => setRecRecipes(eachData))
+    }, [selectOption])
+    // to grab recipes data API end
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -99,6 +121,7 @@ function App() {
       .then(res => res.json())
       .then(fridgeData => setFridgeData(fridgeData));
   },[setFridgeData])
+
   
   return (
     <>
@@ -143,7 +166,8 @@ function App() {
               Recommended Recipes
             </Button>
           </Box>
-
+          
+        
         </Toolbar>
         </Container>
         </AppBar>
@@ -151,7 +175,7 @@ function App() {
       </Box>
       
       {/* MAKE SURE TO KEEP THIS OUTSIDE OF BOX COMPONENT */}
-      <Outlet context={[fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState]}/>
+       <Outlet context={[fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState, selectOption, setSelectOption, recRecipes, setRecRecipes, open]}/>
       </>
       
   );

@@ -46,9 +46,9 @@ const Search = styled('div')(({ theme }) => ({
     },
   }));
 
-const SearchBar = () => {
+const SearchBar = ({itemSearch, setItemSearch}) => {
 
-  const [itemSearch, setItemSearch] = useState("")
+  
   function handleSearch(e) {
     setItemSearch(e.target.value)
   }

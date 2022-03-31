@@ -1,27 +1,51 @@
 
-import { useEffect, useState, useRef } from 'react';
+import Typography from '@mui/material/Typography';
+import { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
-import { DataGrid } from '@mui/x-data-grid';
+import Divider from '@mui/material/Divider';
+import Chip from '@mui/material/Chip';
 
 
 
-const Ingredients = ({recipe, fridgeStock}) => {
+const Ingredients = ({recipe, fridgeData}) => {
     
-    const columns = [
-        {field:'id', headerName:'ID'},
-        {field:'item_name', headerName:"Name"},
-        {field:'quantity', headerName:"Quantity"},
-        {field:'isInFridge', headerName:'In Fridge?'}
-    ]
+  const {id} = recipe
+  const [ingredient, setIngredient] = useState([])
 
-    return (
-        <div style={{ height: 250, width: '100%' }}>
-          <DataGrid 
-            columns={columns}
-            rows={fridgeStock}
-          />
-        </div>
-      );
+  const igreData = async () => {
+      // const req = await fetch(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=b0e9cd47e90747dc899daf160fb585ef`)
+      const req = await fetch('http://localhost:3004/data')
+      const res = await req.json()
+      return res
+  }
+  useEffect(() => {
+      igreData().then(setIngredient)
+  }, [])
+
+  const Root = styled('div')(({ theme }) => ({
+      width: '100%',
+      ...theme.typography.body2,
+      '& > :not(style) + :not(style)': {
+        marginTop: theme.spacing(2),
+      },
+    }));
+
+  const instruction = ingredient.map(instructions =>instructions.steps.map(step => {
+      return (
+          <>
+          <div>
+              {step.step}
+          </div>
+          <Divider></Divider>
+          </>
+      )
+  }))
+  return (
+      <Root>
+          {instruction}
+      </Root>
+
+  )
     
 }
 export default Ingredients

@@ -23,6 +23,7 @@ function Fridge(){
 
     const [fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState] = useOutletContext();
 
+
     const foodInFridge = fridgeData.filter((foodObject) => {
         return foodObject.isInFridge && (foodObject.item_name.toLowerCase().trim().includes(searchState.toLowerCase().trim()) || foodObject.type.toLowerCase().trim().includes(searchState.toLowerCase().trim()));
     })
@@ -156,6 +157,7 @@ function Fridge(){
 
 
     return(
+        <>
         <Box sx={{ flexGrow:1, mt:8}}>
 
         <Grid>
@@ -175,6 +177,7 @@ function Fridge(){
         </Grid>  
         
         </Box>
+        </>
         
     )
 }
