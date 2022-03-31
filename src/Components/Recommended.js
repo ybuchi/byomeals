@@ -18,6 +18,13 @@ const Recommended = () => {
     const [itemSearch, setItemSearch] = useState("")
     const [fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState, selectOption, setSelectOption, recRecipes, setRecRecipes] = useOutletContext()
     const filtRecipe = recRecipes.filter(recipe => recipe.title.toLowerCase().includes(itemSearch))
+    const [selectRecipe, setSelectRecipe] = useState([])
+
+    function handleSelected (recipe) {
+        console.log(recipe)
+        setSelectRecipe(selectRecipe.push(recipe))
+    }
+    
     
     return (
         <Box sx={{ flexGrow:1, mt:12}}>
@@ -38,7 +45,7 @@ const Recommended = () => {
             </Grid>
             <Grid>
 
-            <RecipeList filtRecipe={filtRecipe} recRecipe={recRecipes} fridgeData={fridgeData}/>
+            <RecipeList selectRecipe={selectRecipe} setSelectRecipe={setSelectRecipe} handleSelected={handleSelected} filtRecipe={filtRecipe} recRecipe={recRecipes} fridgeData={fridgeData}/>
             </Grid>
 
         </Box>

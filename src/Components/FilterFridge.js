@@ -11,7 +11,7 @@ const FilterFridge = ({fridgeData, selectOption, setSelectOption}) => {
     });
 
     function handleOnChange(e, value) {
-        setSelectOption([selectOption.push(value.item_name)])
+       setSelectOption(value)
     }
 
     return (
