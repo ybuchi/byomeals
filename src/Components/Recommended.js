@@ -36,9 +36,7 @@ const Recommended = () => {
                             return recipe
                         }
                     }))
-                })
-            
-        
+                })  
     }
 
     return (
@@ -60,7 +58,7 @@ const Recommended = () => {
             </Grid>
             <Grid>
 
-            <RecipeList updatedCookCount={updatedCookCount} selectRecipe={selectRecipe} setSelectRecipe={setSelectRecipe} handleSelected={handleSelected} filtRecipe={filtRecipe} recRecipe={recRecipes} fridgeData={fridgeData}/>
+            <RecipeList updatedCookCount={updatedCookCount} selectRecipe={selectRecipe} setSelectRecipe={setSelectRecipe} handleSelected={handleSelected} filtRecipe={filtRecipe} recRecipes={recRecipes} setRecRecipes={setRecRecipes} fridgeData={fridgeData}/>
             </Grid>
 
         </Box>

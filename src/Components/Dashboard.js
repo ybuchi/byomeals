@@ -8,12 +8,13 @@ import Grid from '@mui/material/Grid';
 
 
 function Dashboard() {
-    const [fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState] = useOutletContext();
+    const [fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState, selectOption, setSelectOption, recRecipes, setRecRecipes] = useOutletContext();
 
     const foodInFridge = fridgeData.filter((foodObject) => {
         return foodObject.isInFridge && (foodObject.item_name.toLowerCase().trim().includes(searchState.toLowerCase().trim()) || foodObject.type.toLowerCase().trim().includes(searchState.toLowerCase().trim()));
     })
     const depletedFoods = fridgeData.filter(foodObject=>!foodObject.isInFridge);
+    
 
     return(
         <>  
@@ -25,7 +26,7 @@ function Dashboard() {
 
             <Grid container spacing={1} id="dashboards-container">
                 <FridgeDashboard fridgeData={ fridgeData } foodInFridge={foodInFridge} depletedFoods={depletedFoods}/>
-                <RecipesDashboard />
+                <RecipesDashboard recRecipes={recRecipes} setRecRecipes={setRecRecipes}/>
             </Grid>
 
             

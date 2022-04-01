@@ -84,6 +84,7 @@
       "image": "https://spoonacular.com/recipeImages/640803-312x231.jpg",
       "imageType": "jpg",
       "cookCount": 1,
+      "isFavorite": true,
       "usedIngredientCount": 1,
       "missedIngredientCount": 2,
       "missedIngredients": [
@@ -138,6 +139,7 @@
       "image": "https://spoonacular.com/recipeImages/665734-312x231.jpg",
       "imageType": "jpg",
       "cookCount": 3,
+      "isFavorite": false,
       "usedIngredientCount": 1,
       "missedIngredientCount": 2,
       "missedIngredients": [
@@ -196,7 +198,8 @@
       "title": "Lemon and Garlic Slow Roasted Chicken",
       "image": "https://spoonacular.com/recipeImages/649495-312x231.jpg",
       "imageType": "jpg",
-      "cookCount": 0,
+      "cookCount": 1,
+      "isFavorite": false,
       "usedIngredientCount": 1,
       "missedIngredientCount": 2,
       "missedIngredients": [
@@ -250,7 +253,8 @@
       "title": "Slow Cooker Rosemary Whole Chicken",
       "image": "https://spoonacular.com/recipeImages/715525-312x231.jpg",
       "imageType": "jpg",
-      "cookCount": 0,
+      "cookCount": 1,
+      "isFavorite": true,
       "usedIngredientCount": 1,
       "missedIngredientCount": 3,
       "missedIngredients": [
@@ -323,6 +327,7 @@
       "image": "https://spoonacular.com/recipeImages/716342-312x231.jpg",
       "imageType": "jpg",
       "cookCount": 0,
+      "isFavorite": true,
       "usedIngredientCount": 1,
       "missedIngredientCount": 3,
       "missedIngredients": [
@@ -392,6 +397,7 @@
       "image": "https://spoonacular.com/recipeImages/641901-312x231.jpg",
       "imageType": "jpg",
       "cookCount": 0,
+      "isFavorite": true,
       "usedIngredientCount": 1,
       "missedIngredientCount": 3,
       "missedIngredients": [
@@ -464,6 +470,7 @@
       "image": "https://spoonacular.com/recipeImages/660220-312x231.jpg",
       "imageType": "jpg",
       "cookCount": 0,
+      "isFavorite": false,
       "usedIngredientCount": 1,
       "missedIngredientCount": 3,
       "missedIngredients": [
@@ -546,6 +553,7 @@
       "image": "https://spoonacular.com/recipeImages/645879-312x231.jpg",
       "imageType": "jpg",
       "cookCount": 0,
+      "isFavorite": true,
       "usedIngredientCount": 1,
       "missedIngredientCount": 3,
       "missedIngredients": [
@@ -615,6 +623,7 @@
       "image": "https://spoonacular.com/recipeImages/636411-312x231.jpg",
       "imageType": "jpg",
       "cookCount": 0,
+      "isFavorite": true,
       "usedIngredientCount": 1,
       "missedIngredientCount": 4,
       "missedIngredients": [
@@ -708,6 +717,7 @@
       "image": "https://spoonacular.com/recipeImages/664206-312x231.jpg",
       "imageType": "jpg",
       "cookCount": 0,
+      "isFavorite": true,
       "usedIngredientCount": 1,
       "missedIngredientCount": 4,
       "missedIngredients": [
