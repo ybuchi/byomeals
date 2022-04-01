@@ -7,7 +7,7 @@
     {
       "id": 1,
       "item_name": "bananas",
-      "quantity": 0,
+      "quantity": 1,
       "type": "Fruit",
       "image": "https://www.edamam.com/food-img/9f6/9f6181163a25c96022ee3fc66d9ebb11.jpg",
       "isInFridge": true
@@ -15,7 +15,7 @@
     {
       "item_name": "sirloin steak",
       "type": "Meat",
-      "quantity": 0,
+      "quantity": 1,
       "image": "https://www.edamam.com/food-img/4f1/4f10105d5c8178f25590ca6dfcd37fca.jpg",
       "isInFridge": true,
       "id": 4
@@ -23,7 +23,7 @@
     {
       "item_name": "salt",
       "type": "Herbs and Spices",
-      "quantity": 0,
+      "quantity": 1,
       "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg",
       "isInFridge": true,
       "id": 5
@@ -31,23 +31,15 @@
     {
       "item_name": "pepper",
       "type": "Herbs and Spices",
-      "quantity": 0,
+      "quantity": 1,
       "image": "https://www.edamam.com/food-img/c6e/c6e5c3bd8d3bc15175d9766971a4d1b2.jpg",
       "isInFridge": true,
       "id": 6
     },
     {
-      "item_name": "chives",
-      "type": "Vegetable",
-      "quantity": 0,
-      "image": "https://www.edamam.com/food-img/f3f/f3f48643a924ba174b894e979cb48620.jpg",
-      "isInFridge": true,
-      "id": 7
-    },
-    {
       "item_name": "salmon",
       "type": "Fish",
-      "quantity": 0,
+      "quantity": 1,
       "image": "https://www.edamam.com/food-img/9a0/9a0f38422e9f21dcedbc2dca0d8209ac.jpg",
       "isInFridge": true,
       "id": 8
@@ -55,7 +47,7 @@
     {
       "item_name": "butter",
       "type": "Dairy",
-      "quantity": 0,
+      "quantity": 1,
       "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg",
       "isInFridge": true,
       "id": 9
@@ -65,16 +57,72 @@
       "type": "Herbs and Spices",
       "quantity": 0,
       "image": "https://www.edamam.com/food-img/474/474d63763b9d8b9da98c5f43a114648c.jpg",
-      "isInFridge": false,
+      "isInFridge": true,
       "id": 11
     },
     {
-      "item_name": "eggs",
+      "item_name": "chicken breast",
+      "type": "Poultry",
+      "quantity": "4",
+      "image": "https://www.edamam.com/food-img/093/093749f4c93e448119fc81976d2c3067.jpg",
+      "isInFridge": true,
+      "id": 13
+    },
+    {
+      "item_name": "olive oil",
+      "type": "Fats and Oils",
+      "quantity": "1",
+      "image": "https://www.edamam.com/food-img/4d6/4d651eaa8a353647746290c7a9b29d84.jpg",
+      "isInFridge": true,
+      "id": 14
+    },
+    {
+      "item_name": "broccoli",
+      "type": "Vegetable",
+      "quantity": "8",
+      "image": "https://www.edamam.com/food-img/3e4/3e47317a3dd54dc911b9c44122285df1.jpg",
+      "isInFridge": true,
+      "id": 15
+    },
+    {
+      "item_name": "salt",
+      "type": "Herbs and Spices",
+      "quantity": "1",
+      "image": "https://www.edamam.com/food-img/694/6943ea510918c6025795e8dc6e6eaaeb.jpg",
+      "isInFridge": true,
+      "id": 16
+    },
+    {
+      "item_name": "baguette",
+      "type": "Grains, Nuts and Baking",
+      "quantity": "1",
+      "image": "https://www.edamam.com/food-img/470/47053c77e167539c64fef3f2a3249bb2.jpg",
+      "isInFridge": true,
+      "id": 17
+    },
+    {
+      "item_name": "rapini",
+      "type": "Vegetable",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/52a/52a2e62a7e6ca0963d1cab1f7cbc06f1.jpg",
+      "isInFridge": true,
+      "id": 18
+    },
+    {
+      "item_name": "sesame oil",
+      "type": "Fats and Oils",
+      "quantity": 0,
+      "image": "https://www.edamam.com/food-img/b87/b874ddcfb6770adc7a155355a902ffb8.jpg",
+      "isInFridge": true,
+      "id": 19
+    },
+    {
+      "item_name": "honey",
       "type": "Other",
       "quantity": 0,
-      "image": "https://www.edamam.com/food-img/a7e/a7ec7c337cb47c6550b3b118e357f077.jpg",
+      "image": "https://www.edamam.com/food-img/198/198c7b25c23b4235b4cc33818c7b335f.jpg",
       "isInFridge": true,
-      "id": 12
+      "id": 20
     }
   ],
   "chicken": [

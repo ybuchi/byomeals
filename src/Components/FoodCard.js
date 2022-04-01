@@ -14,7 +14,7 @@ let foodTypeLabel
         case "Vegetable":
             foodTypeLabel = "vegetable";
             break;
-        case "Fats + Oils":
+        case "Fats and Oils":
             foodTypeLabel = "olive-oils";
             break;
         case "Fish":
@@ -57,7 +57,7 @@ let foodTypeLabel
         incrementQuantity(updatedFoodItem)
     }
     return(
-            <Grid item xs={12} sm={6} md={3} lg={2}>
+            <Grid item xs={12} sm={6} md={4} lg={3}>
                 <Card className="food-card" >
                     <h2 className="card-header">{foodItem.item_name}<span><IconButton onClick={handleClickDelete}><DeleteOutlineIcon /></IconButton></span></h2>
                     

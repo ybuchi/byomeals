@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
 import AddItemForm from "./AddItemForm";
 import FoodContainer from "./FoodContainer";
-import { styled, useTheme, makeStyles } from '@mui/material/styles';
-import Container from '@mui/material/Container';
-import Toolbar from '@material-ui/core/Toolbar';
-import { ClassNames } from "@emotion/react";
+// import { styled, useTheme, makeStyles } from '@mui/material/styles';
+// import Container from '@mui/material/Container';
+// import Toolbar from '@material-ui/core/Toolbar';
+// import { ClassNames } from "@emotion/react";
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import "./Fridge.css"
+import KitchenIcon from '@mui/icons-material/Kitchen';
 // import "./Fridge.css"
 //My API key FDA
 // YjNQFF8radU2ks6rvpawGQmyYWLbVmbLU9C5W2c0
@@ -29,13 +30,17 @@ function Fridge(){
     })
 
     function addNewItem(newItem){
+        //Define variables to keep track of item matches in loop
+            let totalCount = fridgeData.length;
+            let checkCount = 0;
 
         //If the new item name matches one that is already in the fridge, then prompt the user as to whether they want to add this item again.
         for (const foodObject of fridgeData){
             
+            
             if(foodObject.item_name.toLowerCase().trim().includes(newItem.item_name.toLowerCase().trim()) && foodObject.isInFridge){
-                //if the f
-                let confirmDuplicate = window.confirm(`It seems you have a similar item in your fridge: ${foodObject.item_name}. Are you sure you want to add ${newItem.item_name} to your fridge?`)
+                console.log("Item matches and is in Fridge!")
+                let confirmDuplicate = window.confirm(`It seems you've already used: ${foodObject.item_name}. Are you sure you want to add ${newItem.item_name} to your fridge?`)
                 if(confirmDuplicate){
                     fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=52ce18e1&app_key=94901fd21fbdbc510e92bd7736f43784&ingr=${newItem.item_name.toLowerCase().trim()}&nutrition-type=cooking`)
                     .then(res => res.json())
@@ -54,31 +59,36 @@ function Fridge(){
                     .then(newFoodItem => setFridgeData([...fridgeData, newFoodItem]))
                     })
                     alert("Item Successfully Added to your Fridge!")
-                } else {
-                    alert("Action cancelled.")
                 }
                 break;
             }else if(foodObject.item_name.toLowerCase().trim().includes(newItem.item_name.toLowerCase().trim()) && !foodObject.isInFridge){
-                const configObj = {
-                    method : "PATCH",
+                let confirmRecycleIngredient = window.confirm(`It seems you've already used: ${foodObject.item_name}. Do you want to pull ${newItem.item_name} back into your fridge?`)
+                if(confirmRecycleIngredient){
+                    
+                    const configObject = {
+                    method: "PATCH",
                     headers : {
                         'Content-Type' : 'application/json',
                         Accept : 'application/json'
                     },
-                    body : JSON.stringify({...foodObject, isInFridge : true})
-                }
-
-                fetch(`http://localhost:3004/fridge/${foodObject.id}`, configObj)
-                .then(res => res.json())
-                .then(foodNowInFridge => setFridgeData((fridgeData)=>fridgeData.map(((foodObject)=>{
-                    if(foodObject.id===foodNowInFridge.id){
-                        return foodNowInFridge
-                    }else{
-                        return foodObject;
+                    body: JSON.stringify({...foodObject, isInFridge : true})
                     }
-                }))))
+
+                    fetch(`http://localhost:3004/fridge/${foodObject.id}`, configObject)
+                    .then(res => res.json())
+                    .then(recycledFoodItem => setFridgeData(fridgeData.map((ingredientObject)=>{
+                        if(ingredientObject.id === recycledFoodItem.id){
+                           return recycledFoodItem;
+                        }else{
+                            return ingredientObject;
+                        }
+                    })))
+                }
+                break;
             }else{
-                fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=52ce18e1&app_key=94901fd21fbdbc510e92bd7736f43784&ingr=${newItem.item_name.toLowerCase().trim()}&nutrition-type=cooking`)
+                checkCount += 1;
+                if(checkCount === totalCount){
+                    fetch(`https://api.edamam.com/api/food-database/v2/parser?app_id=52ce18e1&app_key=94901fd21fbdbc510e92bd7736f43784&ingr=${newItem.item_name.toLowerCase().trim()}&nutrition-type=cooking`)
                     .then(res => res.json())
                     .then(itemAPIData => {
                         const configObject = {
@@ -94,8 +104,12 @@ function Fridge(){
                         .then(res => res.json())
                         .then(newFoodItem => setFridgeData([...fridgeData, newFoodItem]))
                     })
+                }else{
+                    continue;
+                }
             }
-            break;
+
+
         }
 
         
@@ -104,11 +118,6 @@ function Fridge(){
     //A function that handles the search bar on the Fridge Page to search for ingredients or ingredient types
     function handleSearchChange (e) {
         setSearchState(e.target.value);
-    }
-
-    //A function that handles the Ingredient Type filter buttons on the Fride Page
-    function handleIngredientTypeFilter(ingredientType){
-        
     }
 
     function deleteItem(foodItemToDelete){
@@ -161,14 +170,15 @@ function Fridge(){
         <Box sx={{ flexGrow:1, mt:8}}>
 
         <Grid>
-            <h1 className="main-title">Fridge</h1>
+            <div className="fridge-jumbo">
+                <h1 className="main-title">Fridge <KitchenIcon fontSize="30px" /></h1>
+            </div>
             <AddItemForm newItemForm={newItemForm} 
                          newItemFormState={newItemFormState} 
                          addNewItem={addNewItem}/>
             <FoodContainer searchState={searchState} 
                            setSearchState={setSearchState}
                            handleSearchChange={handleSearchChange} 
-                           handleIngredientTypeFilter={handleIngredientTypeFilter}
                            foodInFridge ={foodInFridge} 
                            deleteItem={deleteItem} 
                            setFridgeData={setFridgeData} 

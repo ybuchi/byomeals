@@ -1,21 +1,31 @@
 .title {
     font-size: 50px;
     font-family: 'Skranji', cursive;
-    color: #0E185F;
-    margin-top: 70px;
-    margin-bottom: 0px;
-    text-align: center;
+    color: ivory;
+    position: absolute;
+    top: 140px;
+    right: 80px;
 }
 .subtitle {
     font-size: 20px;
     font-family: 'Skranji', cursive;
     color: #2FA4FF;
-    margin: 0px;
-    text-align: center;
+    position: absolute;
+    top: 220px;
+    right: 180px;
 }
 
 #dashboards-container {
     margin-top: 40px;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.jumbo{
+    background-image: url("./images/FoodBG.jpg");
+    border-radius: 5px;
+    margin: 5px 0px;
+    height: 400px;
+    position: relative;
+    text-align: center;
 }
