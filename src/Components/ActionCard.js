@@ -52,7 +52,6 @@ const ActionCard = ({recipe, fridgeData, handleSelected, setSelectRecipe, select
     }
     function handleButtonClick(e) {
         handleSelected(recipe)
-        
         fetch ('http://localhost:3004/chicken', {
             method:"POST",
             headers: {

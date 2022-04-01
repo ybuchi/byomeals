@@ -15,6 +15,7 @@ const Recommended = () => {
     
 
     function handleSelected (recipe) {
+        Object.assign(recipe, {cookCount:1})
         setSelectRecipe(selectRecipe.push(recipe))
     }
     
