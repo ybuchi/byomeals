@@ -12,6 +12,8 @@ import FilterFridge from "./FilterFridge";
 import { useOutletContext } from "react-router-dom";
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import "./recommended.css"
 
 
 const Recommended = () => {
@@ -27,6 +29,11 @@ const Recommended = () => {
     
     
     return (
+        <>
+        <div className="recipes-jumbo">
+                <h1 id="rec-title">Recommended Recipes</h1>
+        </div>
+        
         <Box sx={{ flexGrow:1, mt:12}}>
             <Grid container spacing={2} justifyContent="center" alignItems='center'>
             <Box sx={{
@@ -49,6 +56,7 @@ const Recommended = () => {
             </Grid>
 
         </Box>
+        </>
        
     )
     

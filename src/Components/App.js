@@ -1,4 +1,3 @@
-
 import { Outlet, Link as RouterLink } from "react-router-dom";
 import { styled, useTheme } from '@mui/material/styles';
 import {useState, useEffect} from 'react'
@@ -138,7 +137,7 @@ function App() {
               edge="start"
               sx={{ mr: 2, ...(open && { display: 'none' }) }}
           >
-              <MenuIcon />
+              <MenuIcon/>
           </IconButton>
           ) : null
           }
