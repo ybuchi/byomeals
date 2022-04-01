@@ -9,6 +9,7 @@ import FoodContainer from "./FoodContainer";
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import "./Fridge.css"
+import KitchenIcon from '@mui/icons-material/Kitchen';
 // import "./Fridge.css"
 //My API key FDA
 // YjNQFF8radU2ks6rvpawGQmyYWLbVmbLU9C5W2c0
@@ -169,7 +170,7 @@ function Fridge(){
         <Box sx={{ flexGrow:1, mt:8}}>
 
         <Grid>
-            <h1 className="main-title">Fridge</h1>
+            <h1 className="main-title">Fridge <KitchenIcon fontSize="30px" /></h1>
             <AddItemForm newItemForm={newItemForm} 
                          newItemFormState={newItemFormState} 
                          addNewItem={addNewItem}/>
