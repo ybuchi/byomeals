@@ -1,4 +1,3 @@
-
 import { Outlet, Link as RouterLink } from "react-router-dom";
 import { styled, useTheme } from '@mui/material/styles';
 import {useState, useEffect} from 'react'
@@ -98,6 +97,7 @@ function App() {
               onClick={handleOpenUserMenu}
               edge="start"
           >
+
               <MenuIcon />
           </IconButton> 
             </Tooltip>
