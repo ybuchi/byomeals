@@ -1,7 +1,16 @@
 .main-title{
-    padding-top: 50px;
     font-family: 'Skranji', cursive;
-    font-size: 60px;
-    text-align: center;
-    color: #0E185F
+    font-size: 70px;
+    color: ivory;
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translatex(-50%);
+}
+.fridge-jumbo{
+    background-image: url('./images/FridgeBG.jpg');
+    border-radius: 5px;
+    height: 400px;
+    position: relative;
+    margin-bottom: 20px;
 }

@@ -170,7 +170,9 @@ function Fridge(){
         <Box sx={{ flexGrow:1, mt:8}}>
 
         <Grid>
-            <h1 className="main-title">Fridge <KitchenIcon fontSize="30px" /></h1>
+            <div className="fridge-jumbo">
+                <h1 className="main-title">Fridge <KitchenIcon fontSize="30px" /></h1>
+            </div>
             <AddItemForm newItemForm={newItemForm} 
                          newItemFormState={newItemFormState} 
                          addNewItem={addNewItem}/>

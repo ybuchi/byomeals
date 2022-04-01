@@ -42,8 +42,6 @@ function Dashboard() {
                 
             </div>
 
-            
-
             <Grid container spacing={1} id="dashboards-container">
                 <FridgeDashboard fridgeData={ fridgeData } foodInFridge={foodInFridge} depletedFoods={depletedFoods}/>
                 <RecipesDashboard />
