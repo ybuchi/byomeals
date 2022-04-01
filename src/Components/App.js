@@ -34,21 +34,23 @@ function App() {
   const windowSize = useMediaQuery(theme.breakpoints.down('md'))
   
 
-  const [selectOption, setSelectOption] = useState({})
-    // to grab recipes data API beginning
-    const [recRecipes, setRecRecipes] = useState([])
-    const data = async () => {
+  const [selectOption, setSelectOption] = useState([])
+  // console.log(selected.join(',+'))
+  // to grab recipes data API beginning
+  const [recRecipes, setRecRecipes] = useState([])
+  const data = async () => {
+      const selected = selectOption.map(option => option.item_name)
       // array.join(',+')
-        // const req = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=b0e9cd47e90747dc899daf160fb585ef&ingredients=${selectOption[0]},${selectOption.join(',+')}&number=10`)
+        // const req = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=b0e9cd47e90747dc899daf160fb585ef&ingredients=${selected.join(',+')}&number=10`)
         const req = await fetch('http://localhost:3004/chicken')
         const res = await req.json()
         return res
     }
-    useEffect(() => {
-      fetch('http://localhost:3004/chicken')
-      .then (req => req.json())
-      .then (setRecRecipes)
-    }, [])
+    // useEffect(() => {
+    //   fetch('http://localhost:3004/chicken')
+    //   .then (req => req.json())
+    //   .then (setRecRecipes)
+    // }, [])
 
     useEffect(() => {
       data().then((eachData) => setRecRecipes(eachData))

@@ -46,13 +46,13 @@ const Search = styled('div')(({ theme }) => ({
     },
   }));
 
-const SearchBar = ({itemSearch, setItemSearch}) => {
+const SearchBar = ({recRecipes, itemSearch, setItemSearch}) => {
 
   
   function handleSearch(e) {
     setItemSearch(e.target.value)
   }
-
+  
   
     
     return (

@@ -60,7 +60,7 @@ const ActionCard = ({recipe, fridgeData, handleSelected, setSelectRecipe, select
             body: JSON.stringify(selectRecipe)
         })
         .then (req => req.json())
-        .then (data => console.log(data))
+        .then (setRecRecipes)
     }
     return (
         <>

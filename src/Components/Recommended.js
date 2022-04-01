@@ -15,9 +15,10 @@ const Recommended = () => {
     
 
     function handleSelected (recipe) {
-        Object.assign(recipe, {cookCount:1})
+        Object.assign(recipe, {cookCount:1}, {isFavorite:false})
         setSelectRecipe(selectRecipe.push(recipe))
     }
+    
     
     function updatedCookCount(recipe) {
         
@@ -53,7 +54,7 @@ const Recommended = () => {
             }}>
 
             <FilterFridge fridgeData={fridgeData} selectOption={selectOption} setSelectOption={setSelectOption}/>
-            <SearchBar itemSearch={itemSearch} setItemSearch={setItemSearch}/>
+            <SearchBar recRecipes={recRecipes} itemSearch={itemSearch} setItemSearch={setItemSearch}/>
             </Box>
             
             </Grid>

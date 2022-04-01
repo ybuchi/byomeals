@@ -13,8 +13,8 @@ const Ingredients = ({recipe, fridgeData}) => {
   const [ingredient, setIngredient] = useState([])
 
   const igreData = async () => {
-      // const req = await fetch(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=b0e9cd47e90747dc899daf160fb585ef`)
-      const req = await fetch('http://localhost:3004/data')
+      const req = await fetch(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=b0e9cd47e90747dc899daf160fb585ef`)
+    //   const req = await fetch('http://localhost:3004/data')
       const res = await req.json()
       return res
   }

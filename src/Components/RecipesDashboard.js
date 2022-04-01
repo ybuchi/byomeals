@@ -48,7 +48,7 @@ function RecipesDashboard ({recRecipes, setRecRecipes}){
                 >
                     <li>
                         <ul>
-                            <ListSubheader>My Favorite Recipes</ListSubheader>
+                            <ListSubheader>My Favorite Recipes: {likes.length}</ListSubheader>
                             {likes}
                         </ul>
                     </li>
