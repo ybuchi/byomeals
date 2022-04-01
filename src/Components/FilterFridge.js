@@ -3,7 +3,7 @@ import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 
 
 
-const FilterFridge = ({fridgeData, selectOption, setSelectOption}) => {
+const FilterFridge = ({fridgeData, setSelectOption}) => {
     
     const filterOptions = createFilterOptions({
     matchFrom: 'start',

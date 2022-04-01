@@ -131,6 +131,7 @@
       "title": "Crispy Buttermilk Fried Chicken",
       "image": "https://spoonacular.com/recipeImages/640803-312x231.jpg",
       "imageType": "jpg",
+      "cookCount": 1,
       "usedIngredientCount": 1,
       "missedIngredientCount": 2,
       "missedIngredients": [
@@ -184,6 +185,7 @@
       "title": "Zucchini Chicken Omelette",
       "image": "https://spoonacular.com/recipeImages/665734-312x231.jpg",
       "imageType": "jpg",
+      "cookCount": 3,
       "usedIngredientCount": 1,
       "missedIngredientCount": 2,
       "missedIngredients": [
@@ -242,6 +244,7 @@
       "title": "Lemon and Garlic Slow Roasted Chicken",
       "image": "https://spoonacular.com/recipeImages/649495-312x231.jpg",
       "imageType": "jpg",
+      "cookCount": 0,
       "usedIngredientCount": 1,
       "missedIngredientCount": 2,
       "missedIngredients": [
@@ -295,6 +298,7 @@
       "title": "Slow Cooker Rosemary Whole Chicken",
       "image": "https://spoonacular.com/recipeImages/715525-312x231.jpg",
       "imageType": "jpg",
+      "cookCount": 0,
       "usedIngredientCount": 1,
       "missedIngredientCount": 3,
       "missedIngredients": [
@@ -366,6 +370,7 @@
       "title": "Chicken Suya",
       "image": "https://spoonacular.com/recipeImages/716342-312x231.jpg",
       "imageType": "jpg",
+      "cookCount": 0,
       "usedIngredientCount": 1,
       "missedIngredientCount": 3,
       "missedIngredients": [
@@ -434,6 +439,7 @@
       "title": "Easy Chicken Pot Pie",
       "image": "https://spoonacular.com/recipeImages/641901-312x231.jpg",
       "imageType": "jpg",
+      "cookCount": 0,
       "usedIngredientCount": 1,
       "missedIngredientCount": 3,
       "missedIngredients": [
@@ -505,6 +511,7 @@
       "title": "Skillet Roasted Chicken & Potatoes",
       "image": "https://spoonacular.com/recipeImages/660220-312x231.jpg",
       "imageType": "jpg",
+      "cookCount": 0,
       "usedIngredientCount": 1,
       "missedIngredientCount": 3,
       "missedIngredients": [
@@ -586,6 +593,7 @@
       "title": "Grilled Sesame Chicken",
       "image": "https://spoonacular.com/recipeImages/645879-312x231.jpg",
       "imageType": "jpg",
+      "cookCount": 0,
       "usedIngredientCount": 1,
       "missedIngredientCount": 3,
       "missedIngredients": [
@@ -654,6 +662,7 @@
       "title": "Buffalo Chicken Wings Wonton Wraps",
       "image": "https://spoonacular.com/recipeImages/636411-312x231.jpg",
       "imageType": "jpg",
+      "cookCount": 0,
       "usedIngredientCount": 1,
       "missedIngredientCount": 4,
       "missedIngredients": [
@@ -746,6 +755,7 @@
       "title": "Udon Noodles Chicken Tempura",
       "image": "https://spoonacular.com/recipeImages/664206-312x231.jpg",
       "imageType": "jpg",
+      "cookCount": 0,
       "usedIngredientCount": 1,
       "missedIngredientCount": 4,
       "missedIngredients": [

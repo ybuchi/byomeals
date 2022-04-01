@@ -31,6 +31,7 @@ const ActionCard = ({recipe, fridgeData, handleSelected, setSelectRecipe, select
     }
     function handleButtonClick(e) {
         handleSelected(recipe)
+        
         fetch ('http://localhost:3004/chicken', {
             method:"POST",
             headers: {
@@ -40,8 +41,8 @@ const ActionCard = ({recipe, fridgeData, handleSelected, setSelectRecipe, select
         })
         .then (req => req.json())
         .then (data => console.log(data))
+        
     }
-    
     return (
         <>
         <CardActions disableSpacing>

@@ -4,71 +4,34 @@ import {useState, useEffect} from 'react'
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
-import MuiAppBar from '@mui/material/AppBar';
+import AppBar from '@mui/material/AppBar';
 import "./App.css"
-import Drawers from './Drawers'
 import { useMediaQuery } from "@material-ui/core";
-import FilterFridge from "./FilterFridge"
+import Tooltip from '@mui/material/Tooltip';
+import Menu from '@mui/material/Menu';
 
 
-const drawerWidth = 240;
-
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
-  ({ theme, open }) => ({
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: `-${drawerWidth}px`,
-    ...(open && {
-      transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-      marginLeft: 0,
-    }),
-  }),
-);
-
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
-  transition: theme.transitions.create(['margin', 'width'], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: `${drawerWidth}px`,
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
-}));
-
-
-
-const pages = ['Home','Fridge', 'Recommended Recipes'];
 function App() {
+  
+  const [anchorElUser, setAnchorElUser] = useState(null);
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
   const theme = useTheme();
-  const [open, setOpen] = useState(false);
-  const windowSize = useMediaQuery(theme.breakpoints.down('sm'))
+  
+  const windowSize = useMediaQuery(theme.breakpoints.down('md'))
+  
 
   const [selectOption, setSelectOption] = useState({})
     // to grab recipes data API beginning
@@ -91,13 +54,6 @@ function App() {
     }, [selectOption])
     // to grab recipes data API end
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
   //State for the entire fridge data
   const [fridgeData, setFridgeData] = useState([])
 
@@ -126,20 +82,52 @@ function App() {
     <>
     <Box sx={{ display: 'flex', backgroundColor: '#0E185F' }}>
       <CssBaseline />
-      <AppBar className="navbar" position="fixed" open={open}>
+      <AppBar className="navbar" position="fixed" >
         <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {windowSize ? (
-          <IconButton
+          {windowSize 
+          ? 
+        <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Open settings">
+            <IconButton
               color="inherit"
               aria-label="open drawer"
-              onClick={handleDrawerOpen}
+              onClick={handleOpenUserMenu}
               edge="start"
-              sx={{ mr: 2, ...(open && { display: 'none' }) }}
           >
-              <MenuIcon/>
-          </IconButton>
-          ) : null
+
+              <MenuIcon />
+          </IconButton> 
+            </Tooltip>
+            <Menu
+              sx={{ mt: '45px' }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              <ListItem button component={RouterLink} to="/">
+                <ListItemText>Home</ListItemText>
+              </ListItem>
+              <ListItem button component={RouterLink} to="fridge">
+                <ListItemText>Fridge</ListItemText>
+              </ListItem>
+              <ListItem button component={RouterLink} to="/recipes">
+                <ListItemText>Recommended Recipes</ListItemText>
+            </ListItem>
+            </Menu>
+          </Box>
+          :
+          null
           }
           <Typography id="nav-logo" variant="h6" component="div"><span id="nav-logo-span">BYO</span>Meals</Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -165,16 +153,12 @@ function App() {
               Recommended Recipes
             </Button>
           </Box>
-          
-        
         </Toolbar>
         </Container>
         </AppBar>
-        {/* {windowSize ? <Drawers handleDrawerClose={handleDrawerClose} open={open}/> : null} */}
       </Box>
-      
       {/* MAKE SURE TO KEEP THIS OUTSIDE OF BOX COMPONENT */}
-       <Outlet context={[fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState, selectOption, setSelectOption, recRecipes, setRecRecipes, open]}/>
+       <Outlet context={[fridgeData, setFridgeData, newItemForm, newItemFormState, searchState, setSearchState, selectOption, setSelectOption, recRecipes, setRecRecipes]}/>
       </>
       
   );
